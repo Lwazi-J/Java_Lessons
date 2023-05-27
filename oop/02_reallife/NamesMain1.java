@@ -2,7 +2,7 @@
 Change the program to print your name and surname.
 Save the files.*/
 
-public class NamesMain {
+public class NamesMain1 {
     public static void main(String[] args) {
  	   NamePrinter namePrinter = new NamePrinter();
  	   SurnamePrinter surnamePrinter = new SurnamePrinter();

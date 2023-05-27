@@ -1,1 +1,42 @@
+Definition:
+A constructor is a special method of a class or structure in object-oriented programming that initializes a newly created object of that type.
+Example 1:
+In these circumstances the constructor has two broad alternatives between which to choose.
+Example 2:
+Using 2mm thickness as a solid constructor makes the chassis durable and study.
 
+
+In your own words provide a definition for the phrase in red and provide 2 examples of how it can be used in a sentence.
+Use google to find example usages of the phrase.
+
+Object Constructor
+
+
+Definition:
+A constructor in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created
+Example 1:
+a constructor has the same name as that of the class and it does not have a return type
+Example 2:
+ class Wall
+ {public: 
+// create a constructor Wall()
+ { // code } };
+
+
+Provide a list of 5 real life examples of things you can construct.
+
+Things you can construct
+House
+Puzzle
+Clothes
+Garden
+Furniture
+
+
+
+What is a Java Object Constructor?
+It is a special type of method found inside a class, that is run only once when an object is created.
+It is special because it does not have a return type.
+It also has the same name as the class. If your class is called Account the constructor would be called Account as well.
+If you write a class and you do not write a constructor the compiler writes a blank "default constructor" for you.
+If you want your object to do something special before it is created the constructor is the best place to place such code.
