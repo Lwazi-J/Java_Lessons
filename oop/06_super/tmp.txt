@@ -1,1 +1,62 @@
+Superstructure
 
+Definition:
+an object, idea, or complex that is derived from something more basic
+Example 1:
+There are going to be new provisions for superstructures
+Example 2:
+There is a risk that the bureaux will become top-heavy superstructures.
+
+Substructure
+
+Definition:
+an underlying or supporting part of a structure
+Example 1:
+A pit sunk into the structure revealed the presence of two earlier substructures.
+Example 2:
+The bridge's substructure was damaged.
+
+
+Super class
+
+Definition:
+In object-oriented programming, a class from which other classes inherit code is called a superclass.
+Example 1:
+This makes sure the allocation is valid before calling the superclass.
+Example 2:
+This technique is referred to as enveloping the superclass 's operation.
+
+
+
+Super class constructor
+
+Definition:
+As is common knowledge, the default constructor of a class is invoked whenever an object of that class is created. We utilize super() to specifically invoke the superclass constructor from the subclass constructor.
+Example 1:
+It is used to call superclass methods, and to access the superclass constructor.
+Example 2:
+We use super keyword to call the members of the Superclass
+
+
+
+Sub-Class
+
+Definition:
+A subclass is a class that is descended from another class (also a derived class, extended class, or child class).
+Example 1:
+By default, methods cannot be overridden by a subclass.
+Example 2:
+The first class is a subclass of the second class.
+
+
+
+Sub-Class constructor
+
+Definition:
+A subclass inherits all the members (fields, methods, and nested classes) from its superclass.
+Constructors are not members, so they are not inherited by subclasses, but the constructor of the superclass can be invoked from the subclass.
+Example 1:
+A subclass needs a constructor if the superclass does not have a default constructor
+Example 2:
+Fields, methods, and nested classes are all members that a subclass inherits from its superclass.
+Subclasses cannot inherit constructors since they are not members; nonetheless, they may call the constructor of the superclass.
