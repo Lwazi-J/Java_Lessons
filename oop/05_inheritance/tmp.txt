@@ -1,1 +1,19 @@
+Inheritance
+
+Definition:
+something that can or will be inherited: the acquisition of genetic traits through parental transmission to offspring.
+Example 1:
+Indeed, 75 % of them have received or expect to receive an inheritance.
+Example 2:
+They have bought into the idea that success hinges on genetic inheritance
+
+
+In real life it is said that when you have children they extend your family.
+Therefore you extend your parents and your parents extend your grand parents etc
+
+In Java, classes can have the same relationship as people. A class can be a child to another and inherit some of its methods or variable.
+
+The parent is called the super-class.
+The child is called the sub-class.
+The Grand-parent class called the base class. Because it is the root/base of the inheritance tree.
 
