@@ -1,1 +1,18 @@
 
+Constructor Chain
+
+Definition:
+Calling one constructor from another with respect to the current object is known as constructor chaining.
+Example 1:
+Constructor chaining occurs through inheritance.
+Example 2:
+Constructor chaining can be achieved in any order.
+
+What is a Java Object Constructor Chain?
+It is simply when a constructor calls another constructor.
+
+Why do we need constructor chaining?
+In cases where we do not want to duplicate construction logic in all the constructors.
+e.g. If an object has 3 member variables a, b and c and the rule is c = a + b.
+Then regardless of which constructor is called the c = a+b logic must be called.
+We can put this logic in a single constructor which all other constructors call.
