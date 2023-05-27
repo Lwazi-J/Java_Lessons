@@ -25,3 +25,11 @@ Car
 House
 Bed
 Books
+
+JAVA OBJECTS
+
+The previous section explained "what is a class".
+But one question still burgeons is "What is an object".
+The simple answer is "It is a ghost image of a class".
+After a class is loaded into memory another class can create an "Object" AKA Ghost image of the class and load it into memory and use it.
+To create an object of a class one uses the "new" keyword.
