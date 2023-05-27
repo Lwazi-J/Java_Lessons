@@ -1,0 +1,42 @@
+OOP  1.1 Oriented
+
+What is Object Oriented Programming?
+
+Before we can define OOP we need to break the word up into pieces.
+Object
+Oriented
+Programming
+
+In your own words provide a definition for the word in red.
+Provide 2 examples of how it can be used in a sentence.
+Use wiktionary.
+
+Use google to find example usages of the word.
+
+Definition:
+the act or process of programming computers.
+code-writing languages
+
+Example 1:
+You want the web server to support four of the most popular programming paradigms.
+
+Example 2:
+Programming Errors The program has detected an inconsistency either in the code, or in the command file.
+
+
+Orientation
+
+Definition:
+Orientation is the ability to identify one's location, direction, or preferred direction.
+Attending a training session for new hires is an illustration of orientation.
+A person looking west is an illustration of orientation. A man who prefers to date men is an example of orientation.
+
+Example 1:
+These materials are used for the orientation of new employees
+Example 2:
+They identified as bisexual in orientation.
+
+Example 3:
+The organization has a decidedly conservative orientation.
+Example 4:
+Her later works were more introspective in orientation.
