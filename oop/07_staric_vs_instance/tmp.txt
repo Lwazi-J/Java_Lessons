@@ -1,1 +1,69 @@
+Method
+
+Answer:
+A Java method is a group of statements that work together to complete a certain task and return the outcome to the caller.
+
+Static
+
+Definition:
+staying still for a long time without moving or making any changes
+Example 1:
+There was so much static on the radio we couldn't hear the broadcast.
+Example 2:
+He was getting a lot of static about his decision.
+
+Instance
+
+Definition:
+a specific instance of a fact, circumstance, or incident, especially one that serves as an illustration of the norm
+Example 1:
+There have been several instances of violence at the school.
+Example 2:
+I don't usually side with the management, but in this instance I agree with what they're saying
+
+
+
+Class
+Gets loaded from the filesystem by the class loader
+There is only 1 copy of the class loaded into memory.
+The class has instance and static methods defined in it.
+
+Objects
+Are created from the class using the new operator.
+When you create an object you get a new copy of the instance methods
+There can be more than 1 objects/instances of a class.
+An object does not have a copy of the static methods.
+
+Static Methods
+There is only 1 copy of static methods and it lives in the class.
+Everybody that want to use static methods must get them from the class not object.
+Objects do not get a copy of the static methods.
+
+Instance methods
+There is a new copy of instance methods in each object.
+You cannot access instance methods from the class. You must point to the object
+
+
+
+What is static method?
+
+A method is a group/sequence of java statements(instructions to the computer to perform an action).
+
+A static has been defined as something that does not change or a piece of memory allocated only once when the program is initialized.
+
+Therefore it can be said the a static method is a group of java instructions that is allocated once only when the class is created(loaded into memory).
+
+This happens when you create a java class and you define a method inside it and you put the static keyword in the beginning. By placing the static keyword you make the method static.
+
+
+
+What is an instance method?
+
+A method is a group/sequence of java statements(instructions to the computer to perform an action).
+
+An instance has been defined as a particular appearance or or occurrence of something.
+
+Therefore it can be said the a instance method is a particular occurrence of a group of java instructions.
+
+This happens when you create a java class and you define a method inside it and you do not put the static keyword in the beginning. By omitting the static keyword you make the method instance not static.
 
