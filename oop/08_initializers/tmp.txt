@@ -1,1 +1,52 @@
+initializer
+
+Definition:
+An initializer is a piece of code that is positioned outside of any method,
+constructor, or other block of code and has no assigned name or data type.
+
+Example 1:
+The declarator must include an initializer
+Example 2:
+The constructor that is used when no explicit initializer is supplied.
+
+Static initializer
+
+Answer:
+In a Java class, the static initializer is a static block of code that executes just once before the constructor or main function is called.
+
+
+Instance initializer
+
+Answer:
+The instance data member is initialized using the Instance Initializer block. Every time an object belonging to the class is created, it runs.
+
+
+What is a Java static initializer.
+
+There is a special kind of block known as a static initialization block that is executed only once when the class is initialized. It can be used to initialize static variables.
+
+
+The program below shows an example of a static initializer.
+
+public class StaticInitialilizer {
+	static int NUMBER;
+
+	static{
+		NUMBER = 5;
+	}
+}
+
+
+What is a Java instance initializer.
+
+It is a special code block that is every time an instance of an object is created.
+
+public class StaticInitialilizer {
+
+    int NUMBER;
+
+    {
+		NUMBER = 5;
+	}
+}
 
