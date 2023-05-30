@@ -1,1 +1,37 @@
+Interface
+
+Definition:
+An interface, as a noun, can refer to: A user interface, which is made up of the dials, knobs, operating system instructions, graphical display formats, and other devices offered by a computer or program to enable communication and usage of the latter.
+Example 1:
+We'll come on to implementing this interface later.
+Example 2:
+Featuring a simple interface to control the content of your website.
+
+
+Implement
+
+Definition:
+a device, such as a tool or utensil, that serves a certain function
+Example 1:
+The government will implement what you decide
+Example 2:
+Any board that proceeded to implement the change would be considered irresponsible
+
+
+What is a Java Interface?
+
+A java interface is a special kind of class that can contain the following:
+
+Static Variables
+Instance Variables
+Instance methods that do not have a body.
+
+The example below shows an interface as you can see. The getName() method is empty and is terminated by a semicolon ";".
+
+
+public interface Musician{
+    public String getName();
+    public String getLyrics();
+}
+
 
