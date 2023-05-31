@@ -1,1 +1,8 @@
+Parameter variable
 
+A parameter is a named variable passed into a function. Parameter variables are used to import arguments into functions.
+
+
+Java Parameters.
+In Java parameter is a variable that allows for objects or classes to exchanges values.
+Object A can pass a value to Object B.

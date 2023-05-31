@@ -1,0 +1,1 @@
+A local variable is a variable that exist for the duration of a method. It get created when that method is executed and it gets destroyed when that method exits. Local variables must always be initialized to a value even if the value is null.
