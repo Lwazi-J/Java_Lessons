@@ -1,0 +1,125 @@
+Which of the following describes inheritance?
+-B. A extends B where A is a interface and B is an interface
+-C. A extends B where A is a class and B is an class
+
+Explanation:
+The correct answer is C. Inheritance is a mechanism in object-oriented programming where a class (A) can inherit properties and behaviors from another class (B). In this case, A extends B, where A is a class and B is also a class.
+
+The correct answer is B. A extends B where A is an interface and B is an interface: This describes interface inheritance.
+
+
+
+If class A extends Class B which of the following statements are true?
+-C. A has access to B public methods: True. Public methods in the superclass are accessible to the subclass. They can be called directly from the subclass.
+-E. A has access to B protected methods:  True. Protected methods in the superclass are accessible to the subclass. They can be called directly from the subclass. Protected access allows access within the same package as well as in subclasses, even if they are in different packages.
+
+
+Which of the following statements are true?
+-B. long parameters are passed by value: This statement is true. Like other primitive data types, long parameters are also passed by value. Changes made to the parameter inside a method do not affect the original value outside the method.
+-C. String parameters are pass by reference
+-E. Instances of Object and any subclasses of it are passed by reference
+
+
+
+Which of the programs in Question 11 are examples of pass parameter by value ?
+-B. 2
+-D. 4
+
+
+Question 13
+What will happen if you attempt to compile and run the following program ?
+-B. It will print: Counter1 is at:4 || Counter2 is at:4
+
+
+
+
+
+Question 14
+What will happen if you attempt to compile and run the following program ?
+-C. It will print: Counter1 is at:4 || Counter2 is at:8
+
+
+
+Question 16
+From the programs in Question 15 above that will compile, what  results will they give ?
+-A. Will throw a runtime exception.
+-B. Will print: Hello:Peter
+
+
+
+Question 17
+Which of the following classes extend Object directly or indirectly ?
+-D. 1,2,3,4,5
+
+
+
+
+Question 18
+Which of the programs in question 17 will compile ?
+-A. 1
+-B. 2
+-D. 4
+-E. 5
+
+
+
+True or False. The following pieces of codes are identical to the compiler.
+1. package oop.objectl;
+public class ObjTest10 extends Object{
+	public static void main(String[] args) {
+		System. out . println( "Hello");
+	}
+}
+
+2. package oop.objectl;
+public class ObjTest10{
+	public static void main(String[] args) {
+		System. out . println( "Hello");
+	}
+}
+
+-True
+
+Explanation:
+True. The two code snippets provided are identical to the compiler. In Java, when a class does not explicitly extend any other class, it is implicitly extending the `Object` class, which is the root class for all classes in Java. Therefore, in the second code snippet, even though the `extends Object` part is omitted, the class `ObjTest10` still implicitly extends `Object` as per the Java language specification. Hence, both code snippets will behave the same when compiled and executed.
+
+
+
+Question 20
+Which of the following are a reason for the answer in the above question ?
+
+A. The compiler is strict there for the files must be 100% identical to mean the same thing.
+B. The compiler is lenient and fills in extends Object for you if you leave it out.
+
+-B
+
+Explanation:
+In Java, if a class does not explicitly extend any other class, it is automatically considered to be extending the Object class. This behavior is specified by the Java language itself. Therefore, when you omit the extends Object part in a class declaration, the compiler automatically assumes that the class extends Object. This means that both code snippets in the question are functionally equivalent, and the compiler treats them as such.
+
+
+
+Question 21
+Which of the following are methods of java.lang.Object ?
+
+A. String toString()
+B. Class getClass()
+C. int hashCode()
+D. void wait()
+E. boolean equals();
+
+-A,B,C,D,E
+
+Explanation:
+The java.lang.Object class is the root class of all Java classes. It provides several methods that are available to all objects in Java. Here's a breakdown of the methods mentioned:
+
+A. String toString(): This method returns a string representation of the object. It is commonly overridden in subclasses to provide a meaningful string representation.
+
+B. Class getClass(): This method returns the runtime class of the object. It allows you to retrieve information about the class of an object at runtime.
+
+C. int hashCode(): This method returns the hash code value for the object. It is used in hash-based collections, such as HashMap and HashSet, to determine the object's position or uniqueness.
+
+D. void wait(): This method causes the current thread to wait until another thread notifies it. It is typically used in multithreading scenarios for thread synchronization.
+
+E. boolean equals(): This method compares the current object with another object to check if they are equal. It is used to determine the equality of objects based on their content or state.
+
+All of these methods are part of the java.lang.Object class and are inherited by all Java classes unless explicitly overridden.
