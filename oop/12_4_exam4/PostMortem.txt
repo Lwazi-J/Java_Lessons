@@ -1,0 +1,721 @@
+Question 5.  Which of the following is not true about constructors?
+A. It initializes an object immediately upon creation
+B. It is syntactically similar to a method
+C. The return type of class constructor is the class type itself
+D. None of the above
+
+Answer:
+-B. Constructors are syntactically similar to methods. They are defined with the same name as the class and can take parameters. However, constructors do not have a return type, unlike methods.
+-The return type of a class constructor is the class type itself. Constructors do not explicitly return a value, but they implicitly return the newly created object of the class.
+
+
+
+Question 6.  When a method is made static, it cannot use
+A. this
+B. super
+C. parameter
+D. object
+
+Answer:
+-A. this. Since static methods are not associated with any particular instance of the class, they do not have access to the "this" reference, which points to the current instance. Attempting to use "this" in a static method will result in a compilation error.
+
+-B. super. Static methods can still access static variables and other static methods within the class. They can also use parameters and call other static methods or static variables. The "super" keyword can be used in a static method to call a static method or variable of the superclass, but it cannot be used to refer to the current instance.
+
+
+
+
+Question 7. Which statement are true with regards to the  interface?
+A. All methods in an interface are abstract
+B. All methods in an interface are public by default
+C. You can use the public and protected modifier for a method in an interface
+D. You can use the abstract modifier for a method in an interface
+E. All of the above
+
+Answer:
+A. All methods in an interface are abstract. Interfaces in Java only define method signatures without providing any implementation. By default, all methods in an interface are abstract, meaning they have no method body and are intended to be overridden by implementing classes.
+
+B. All methods in an interface are public by default. Interfaces are meant to define the contract for the behavior that implementing classes must adhere to. Therefore, all interface methods are implicitly public, and the access modifier "public" is not required to be explicitly specified.
+
+D. You can use the abstract modifier for a method in an interface. Although all methods in an interface are abstract by default, it is still possible to explicitly use the "abstract" keyword for interface methods. However, it is redundant to do so since they are already implicitly abstract.
+
+
+
+
+
+Question 8. Given the following code:
+package demo. oop;
+class Display {
+	public void display() {
+		System. out. print( "Display. display( ) ;
+	}
+}
+
+class Monitor extends Display {
+	public long pixelCount() {
+		return 1024 * 768;
+	}
+}
+
+public class Printer {
+	public static void main(String[] args) {
+		Display display = new Monitor();
+		// some code
+		long pixelCount = display. pixelCount( ) ;
+	}
+}
+A. The code will compile
+B. The code will not compile because the pixelCount method is not part of Display.
+C. The code will compile but will thrown a NullPointerException
+D. The code is a perfect example of polymorphism
+
+Answer:
+-B. The code will not compile because the pixelCount method is not part of Display.
+-D. The code is a perfect example of polymorphism
+
+Explanation:
+In the given code, the class Monitor extends the class Display and defines its own method pixelCount(). However, the variable display is declared as type Display and is assigned a new instance of Monitor.
+
+Since the variable display is of type Display, it can only access the methods defined in the Display class. The pixelCount() method is not part of the Display class, so attempting to invoke display.pixelCount() will result in a compilation error.
+
+
+
+
+Question 10. The keyword extends can be used
+A. to create a subclass from another class
+B. to create a subinterface from another interface
+C. to make a class implement an interface
+D. to make an interface implement another interface
+E. A and C
+
+Answer:
+A. to create a subclass from another class
+B. to create a subinterface from another interface
+
+Explanation:
+By using extends, a class can inherit the properties and methods of another class. The subclass extends the superclass, thereby inheriting its members and having the ability to override or add new functionality.
+
+
+
+Question 11. Given the following class
+
+class RocketScience {
+	public String description;
+	public String getDescription() {
+		return description;
+	}
+}
+
+Which of the following statements are correct?
+
+A. The class will not compile because it has no constructor.
+B. The class will compile.
+C. This class has a constructor.
+D. The class will compile but will throw an exception when instantiated.
+E. All of the above
+
+Answer:
+-B. The class will compile.
+-C. This class has a constructor.
+
+Explanation:
+In the given class, there is no explicit constructor defined. However, when no constructor is explicitly defined in a class, Java automatically adds a default, no-argument constructor. This default constructor is provided by the Java compiler and allows the class to be instantiated without any issues.
+
+
+
+Question  12.
+abstract class Abstract {
+public Abstract() {
+	}
+}
+
+A. The class will not compile because an abstract class must not have a constructor.
+B. The class will compile but cannot be instantiated.
+C. The class will compile and can be instantiated.
+D. The class will not compile because Abstract is a keyword and cannot be used as a class name.
+E. None of the above
+
+Answer:
+-B. The class will compile but cannot be instantiated.
+
+
+
+Question 13. Which ones are valid variable declarations?
+A. long row_count;
+B. long $;
+C. long table$;
+D. long _g5;
+E. int $final_;
+F. int static;
+
+Answer:
+A. long row_count;
+B. long $;
+C. long table$;
+D. long g5;
+E. int $final;
+
+Explanation:
+Option F, "int static;", is not a valid variable declaration because "static" is a reserved keyword in Java and cannot be used as an identifier for a variable.
+
+
+Question 14. Here is the content of the Computer.java file.
+
+package test;
+class A {
+}
+final class b {
+}
+
+Which of the following statements is (are) true?
+
+A. The code will not compile because the file does not contain a Computer calss.
+B. A compile error at line 7 because a class name must start with a capital.
+C. Compile errors at line 3 and 7 because Computer.java may only contain a class with the same name as the file.
+D. The code will compile
+E. B and C
+
+Answer:
+-D. The code will compile
+
+
+
+Given
+package com.example;
+public class Printer {
+	public static void args) {
+		System. out. print(args [1]);
+		System. out. print(args [2]);
+	}
+}
+
+The program is invoked using this command.
+java com.example.Printer Sonic "Drill" 'Toxic'
+
+What is printed on the console?
+
+A. SonicDrill
+B. Sonic"Drill"
+C. "Drill"'Toxic'
+D. Drill'Toxic'
+E. B and C
+
+Answer:
+-D. Drill'Toxic'
+
+
+
+Question 18. Consider the following code snippet that contains named regions R,S,T,U,V and X.
+
+int m = 0;
+//--------- R -----------
+while (m < 5) {
+ //--------- S -----------
+	for (int n = O; n < 3; n++) {
+	  // --------- T -----------
+		System. out. println(m) ;
+		System. out. println(n) ;
+	  // ----------- U ----------
+	}
+      // ----------- V -----------
+      m++;
+    }
+    // ---------- X ----------
+
+Which of the following statements are true?
+
+A. n cannot be used in region R
+B. m and n can be used in region T.
+C. m and n can be used in region U.
+D. m and n can be used in region V
+E. m can be used in regions S,T,U and V.
+F. m and n are out of scope in Region X.
+
+Answer: A, B, C, E.
+
+A is correct because the scope of n is only in the for block. Therefore, n cannot be used in region R.
+B is correct because m and n are visible in region T.
+C is correct because m and n are visible in region U
+D is incorrect because n is not visible in region V.
+E is correct because m is in scope in regions S, T, U and V.
+F is incorrect because only n is out of scope in region X. m is still visible in region X.
+
+
+
+Question 20. Consider the following code
+Given
+package test;
+public class Parent {
+	public Parent() {
+		System. out. print("Parent...");
+	}
+	public static void main(String[] args) {
+		Childl cl = new Childl();
+		Child2 c2 = new Child2();
+	}
+}
+
+class Childl extends Parent {
+	public Childl() {
+		super();
+		System. out. print( "Childl...");
+	}
+}
+
+class Child2 extends Parent {
+	public Child2() {
+		System. out. print( "Child2... " );
+	}
+}
+What will be printed on the console when the Parent class is executed?
+A. The program will not compile because the Parent class does not have a constructor that takes a String.
+B. The program will not compile because Child1 and Child2 do not have a constructor that matches the signature of the constructor in Parent.
+C. The program will compile and when executed it will print Child1...Parent...Child2...
+D. The program will compile and when executed it will print Parent...Child1...Parent...Child2...
+
+Answer:
+D. The program will compile and when executed it will print Parent...Child1...Parent...Child2...
+
+Explanation:
+The Parent class constructor is invoked, which prints "Parent...".
+The Childl class constructor is invoked. Since Childl extends Parent, the super() call in the Childl constructor invokes the Parent class constructor, which prints "Parent...". 
+Then, the Childl constructor itself prints "Childl...".
+The Child2 class constructor is invoked. 
+The Child2 constructor does not explicitly invoke the Parent class constructor, so the default super() call is implicitly made. 
+This invokes the Parent class constructor again, which prints "Parent...". Then, the Child2 constructor itself prints "Child2...".
+
+
+
+Question 21
+Given
+package test;
+public class Parent {
+	public Parent(String name) {
+		System. out. print("Parent...");
+	}
+	public static void main(String[] args) {
+		Childl cl = new Childl("Joe");
+		Child2 c2 = new Child2("Jane");
+	}
+}
+
+class Childl extends Parent {
+	public Childl(String name) {
+		super(name);
+		System. out. print( "Childl...");
+	}
+}
+
+class Child2 extends Parent {
+	public Child2(String name) {
+		System. out. print( "Child2... " );
+	}
+}
+
+Which of the following statements are true?
+
+A. The program will not compile because the Parent class does not have a no-argument constructor.
+B. The program will not compile because the constructor in Child2 will try to call the default constructor in Parent and such a constructor does not exist.
+C. The program will compile and when executed it will print Child1...Parent...Child2...
+D. The program will compile and when executed it will print Parent...Child1...Parent...Child2...
+
+Answer:
+A. The program will not compile because the Parent class does not have a no-argument constructor.
+B. The program will not compile because the constructor in Child2 will try to call the default constructor in Parent and such a constructor does not exist.
+
+
+
+
+Question 22.  Given the following class
+
+package demo;
+public class Dem0100 {
+	private void doSomething() {
+		System. out. println( "Hello, World!");
+	}
+
+public static void main(String[] args) {
+	doSomething( ) ;
+	}
+}
+
+What is the output of the program?
+
+A. The program will print "Hello, World!"
+B. The program will print an empty string
+C. The program will fail to compile because the doSomething method is private
+D. The program will fail to compile because you cannot access a non-static method from static method
+
+Answer:
+D. The program will fail to compile because you cannot access a non-static method from static method
+
+Explanation:
+The doSomething() method in the Dem0100 class is declared as private, which means it can only be accessed within the same class.
+In the main method, an attempt is made to call the doSomething() method directly without an instance of the class. 
+Since the doSomething() method is non-static, it can only be called using an instance of the class.
+However, since there is no instance of the Dem0100 class created, the doSomething() method cannot be accessed from the static main method.
+As a result, the program will fail to compile with a compilation error indicating that you cannot access a non-static method from a static method.
+
+
+
+Question 23. Consider the following code snippet:
+
+package util;
+public class NumberUtil {
+	public int getTodaysNumber() {
+		private int i = 9;
+		return i;
+	}
+}
+
+Which statement is true with regard to the class above?
+
+A. The program will compile
+B. The getTodaysNumber method returns 9
+C. The getTodaysNumber method can be accessed from static methods
+D. The program will not compile
+
+Answer:
+D. The program will not compile.
+
+Explanation:
+In the code snippet, there is a syntax error in the getTodaysNumber() method declaration. 
+The line private int i = 9; is attempting to declare a private instance variable i inside the method. 
+However, variables cannot be declared with access modifiers (like private) inside methods.
+To fix the error, the declaration of the variable i should be moved outside of the method, as an instance variable of the class.
+Therefore, the code snippet as provided will not compile due to the syntax error.
+
+
+
+
+Question 24. Consider the following snippet
+
+public class MathUti1 {
+	public static int add(int a, int b) {
+		a++;
+		b++;
+		return a * b;
+	}
+
+	public static void main(String[] args) {
+		int m = 10;
+		int n = 20;
+		int o = add(m, n);
+	}
+}
+
+Which of the following statement(s) is/ are true?
+
+A. At line 11 the value of m is 11
+B. At line 11 the value of n is 21
+C. At line 11 the value of m is 10
+D. At line 11 the value of n is 20
+
+Answer:
+C. At line 11 the value of m is 10
+D. At line 11 the value of n is 20
+
+Explanation:
+At line 7, the add method is called with the values of m (10) and n (20) as arguments.
+Inside the add method, the parameters a and b are incremented by 1 using the ++ operator. 
+However, these changes are local to the add method and do not affect the variables m and n in the main method.
+The add method then returns the result of a * b, which is (10 + 1) * (20 + 1) = 11 * 21 = 231.
+At line 11, the value of m remains unchanged since it was not modified within the add method. 
+Therefore, the value of m is still 10.
+Similarly, at line 11, the value of n remains unchanged since it was not modified within the add method. 
+Therefore, the value of n is still 20.
+
+
+
+
+ 
+Question 25. What can be said about this class?
+
+public class Printer {
+	private String name;
+	public Printer() {
+		this( "Default");
+	}
+
+	public Printer (String name) {
+		this. name = name;
+	}
+
+	public static void main(String[] args) {
+		Printer printer = new Printer();
+	}
+}
+
+A. The code creates two instances of Printer
+B. The code creates one instance of Printer
+C. The code calls the no-argument constructor and then the one-argument constructor
+D. The name field will be assigned the value “Default”
+
+Answer:
+B. The code creates one instance of Printer
+C. The code calls the no-argument constructor and then the one-argument constructor
+D. The name field will be assigned the value “Default”
+
+Explanation:
+In the main method, the code creates an instance of the Printer class using the new Printer() constructor.
+The Printer class has two constructors: a no-argument constructor and a constructor that takes a String parameter.
+The no-argument constructor is called by the line Printer printer = new Printer();.
+Inside the no-argument constructor, the constructor this("Default") is called. 
+This means that the one-argument constructor with the value "Default" is invoked.
+Therefore, the code creates only one instance of the Printer class, and the name field of that instance will be assigned the value "Default" as specified in the one-argument constructor.
+
+
+
+
+Question 26. Given the following code
+
+interface Printable { }
+class Document{}
+class EBook extends Document implements Printable { }
+
+Which of the following statements will not cause a compile error?
+
+A. Printable printable1 = new Printable();
+B. Printable printable2 = new Document();
+C. Printable printable3 = new EBook();
+D. Document document1 = new Document();
+E. Document document2 = new EBook();
+F. EBook ebook1 = new EBook();
+G. EBook ebook2 = new Document();
+
+Answer:
+C. Printable printable3 = new EBook();
+D. Document document1 = new Document();
+E. Document document2 = new EBook();
+F. EBook ebook1 = new EBook();
+
+Explanation:
+B. Printable printable2 = new Document();: A Document object can be assigned to a variable of type Printable since Document is a subclass of Printable.
+C. Printable printable3 = new EBook();: An EBook object can be assigned to a variable of type Printable since EBook implements the Printable interface.
+D. Document document1 = new Document();: A Document object can be assigned to a variable of type Document.
+E. Document document2 = new EBook();: An EBook object can be assigned to a variable of type Document since EBook is a subclass of Document.
+F. EBook ebook1 = new EBook();: An EBook object can be assigned to a variable of type EBook.
+
+
+
+
+
+Question 28. Consider the following code
+
+package test;
+public class MathGenius {
+	public void printDouble(int a, int b) {
+		a*=2;
+		b*=2;
+		System.out.print(a + "_");
+		System. out. print(b);
+	}
+	public static void main(String[] args) {
+		int x = 10;
+		int y = 20;
+		new MathGenius() .printDoub1e(x, y);
+		System. out. print("_" + x "_" + y);
+	}
+}
+
+What is the output of the program?
+
+A. 20__40__20__40
+B. 20__40__10__20
+C. 10__20__10__20
+D. 10__20__20__40
+
+Answer:
+B. 20__40__10__20
+
+Explanation:
+In the main method, two variables x and y are declared and assigned the values 10 and 20, respectively.
+The printDouble method is invoked on a new instance of the MathGenius class, passing x and y as arguments.
+Inside the printDouble method, the parameters a and b are multiplied by 2 (a *= 2 and b *= 2), but these changes are local to the method and do not affect the variables x and y in the main method.
+The printDouble method then prints the values of a and b (System.out.print(a + "_"); and System.out.print(b);).
+Since a and b were multiplied by 2, the printed values will be 20 and 40, respectively.
+After the printDouble method invocation, the main method continues and prints the values of x and y, along with underscores (System.out.print("_" + x + "_" + y);).
+The values of x and y remain unchanged (10 and 20, respectively), and the underscores are added in the print statement.
+Therefore, the output of the program will be "20__40__10__20".
+
+
+
+
+Question 30. Let class Circle extend class Shape. Given the following code
+
+Circle circle = new Circle();
+Shape shape = new Shape( ) ;
+
+Which of the following expressions evaluate to true?
+
+A. circle instanceof Shape
+B. circle instanceof Object
+C. shape instanceof Circle
+D. (Shape) circle instanceof Circle
+
+Answer:
+A. circle instanceof Shape
+B. circle instanceof Object
+D. (Shape) circle instanceof Circle
+
+Explanation:
+A. circle instanceof Shape will evaluate to true because a Circle object is an instance of the Shape class.
+B. circle instanceof Object will also evaluate to true because all classes in Java implicitly inherit from the Object class.
+D. (Shape) circle instanceof Circle will evaluate to true because the (Shape) circle expression casts the Circle object to the Shape type, and the resulting object is still an instance of the Circle class.
+
+
+
+
+
+Question  31. Consider the following two classes
+
+package inheritance;
+class Parent {
+	public void print() { ... }
+	String describe() { ... }
+	protected String[] copyNames(String[] sources) { ... }
+	private boolean isResident() { ... }
+}
+
+class Sub extends Parent {
+	public void dolt() {
+		...
+	}
+}
+
+Which methods can be used in the Sub class?
+
+A. print, describe, doIt
+B. print, describe, copyNames, isResident
+C. print, describe, copyNames
+D. print, describe, copyNames, toString
+
+Answer:
+A. print, describe, doIt
+C. print, describe, copyNames
+D. print, describe, copyNames, toString
+
+Explanation:
+The Sub class extends the Parent class, which means it inherits all the accessible methods from the Parent class.
+The Parent class has the following methods:
+public void print(): This method is accessible in the Sub class because it is inherited from the Parent class and has public access.
+String describe(): This method is accessible in the Sub class because it is inherited from the Parent class and has default (package-private) access.
+protected String[] copyNames(String[] sources): This method is accessible in the Sub class because it is inherited from the Parent class and has protected access. It can be accessed within the same package or by subclasses.
+private boolean isResident(): This method is not accessible in the Sub class because it is declared as private in the Parent class. 
+Private methods are not inherited and can only be accessed within the same class.
+The Sub class also has its own method public void dolt(), which is specific to the Sub class.
+
+
+
+
+
+Question 33. Consider the following code
+
+package test;
+public class Holder {
+	float length = 1OOF;
+	static {
+		width = 23.OOF ;
+	}
+	static {
+		width = 25.OOF ;
+	}
+	static float width = 12.30F;
+	public static void main(String[] args) {
+		Holder hl = new Holder();
+		hl . length++ ;
+		hl . width++;
+		Holder h2 = new Holder();
+		System. out. print(h2.width + ",");
+		System. out. print(h2. length) ;
+	}
+}
+
+What is the output of the program?
+
+A. 25.0, 100.0
+B. 12.3, 100.0
+C. 26.0, 100.0
+D. 26.0, 110.0
+E. 13.3, 100.0
+F. 13.3, 101.0
+
+Answer:
+E. 13.3, 100.0
+
+
+
+
+
+Question 34. Consider the following code
+
+package test;
+abstract class Base {
+	public Base() {}
+	public Base(String s) {}
+}
+final class Impl extends Base {
+}
+public class Tester {
+	public static void main(String[] args) {
+		Base basel = new Base();
+		Base base2 = new Impl();
+		new Impl() .toString();
+		( (Base) new Impl()). tostring();
+	}
+}
+
+Does the code compile?
+
+A. It compiles
+B. No, compile error at line 10
+C. No, compile error at line 12
+D. No, compile error at line 13
+
+Answer:
+B. No, compile error at line 10
+
+
+
+
+
+Question 35. Consider the following code
+
+public class Employee {
+	protected String firstName;
+	public int age;
+	private String lastName;
+	boolean member;
+}
+
+import test. sense. Employee;
+public class Manager extends Employee {
+	public void configure() {
+		this . age = 12;
+		this . firstName = "Aurora";
+		this . lastName = "Valentino";
+		this . member = false;
+	}
+}
+
+Assuming Employee and Manager are not in the same package, which of the following
+statements in the Manager class will generate a compile error?
+
+A. this.age = 12;
+B. this.firstName = "Aurora";
+C. this.lastName = "Valentino";
+D. this.member = false;
+
+Answer:
+C. this.lastName = "Valentino";
+D. this.member = false;
+
+Explanation:
+In the given code, there are two classes: Employee and Manager.
+The Employee class has four instance variables: firstName, age, lastName, and member. 
+The access modifiers used are protected, public, private, and default (package-private) respectively.
+The Manager class extends the Employee class, which means it inherits the instance variables from the Employee class.
+In the Manager class's configure() method:
+The statement this.age = 12; is valid because age is a public instance variable inherited from the Employee class.
+The statement this.firstName = "Aurora"; is valid because firstName is a protected instance variable inherited from the Employee class, and Manager is a subclass of Employee.
+The statement this.lastName = "Valentino"; will generate a compile error because lastName is a private instance variable in the Employee class. It is not accessible directly in the Manager class.
+The statement this.member = false; is valid because member is a default (package-private) instance variable inherited from the Employee class, and Manager is in the same package as Employee.
