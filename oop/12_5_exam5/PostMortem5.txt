@@ -1,0 +1,746 @@
+Question 2
+
+Consider the following class...
+class TestCIass{
+	int x;
+	public static void main(String[] args){
+	// lot of code
+	}
+}
+
+Select 1 option
+
+A. By declaring x as static, main can access this.x
+B. By declaring x as public, main can access this.x
+C. By declaring x as protected, main can access this.x
+D. main cannot access this.x as it is declared now.
+E. By declaring x as private, main can access this.x
+
+Answer:
+D. main cannot access this.x as it is declared now.
+
+Explanation:
+The variable x in the class TestClass is an instance variable because it is not declared as static.
+The main method in Java is a static method, which means it belongs to the class rather than an instance of the class.
+Since main is a static method and x is an instance variable, the main method cannot directly access this.x because this refers to the current instance, which is not applicable in a static context.
+In order for the main method to access x, it would either need to create an instance of the class TestClass and access x through the instance, or x should be declared as static so that it can be accessed directly within the static context of the main method
+
+
+
+Question 7
+
+How can you declare a method someMethod() such that an instance of the class is not needed to
+access it and all the members of the same package have access to it.
+Select 3 options
+
+A. public static void someMethod()
+B. static void someMethod()
+C. protected static void someMethod()
+D. void someMethod()
+E. protected void someMethod()
+F. public abstract static void someMethod()
+
+Answer:
+A. public static void someMethod()
+B. static void someMethod()
+C. protected static void someMethod()
+
+Explanation:
+Option A: public static void someMethod()
+This option declares the method as public, allowing access from anywhere, and static, meaning it can be accessed without creating an instance of the class. Therefore, all members of the same package can access it.
+
+Option B: static void someMethod()
+This option declares the method as static, allowing access without an instance of the class. Since no access modifier is specified, the method has package-private access, meaning it is accessible to other members within the same package.
+
+Option C: protected static void someMethod()
+This option declares the method as protected, which allows access to subclasses and other members within the same package. It is also declared as static, allowing access without an instance of the class.
+
+
+
+Question 9
+
+Which of the following are valid declarations?
+
+Select I option
+
+A. abstract int absMethod(int param) throws Exception;
+B. abstract native int absMethod(int param) throws Exception;
+C. float native getVariance() throws Exception;
+D. abstract private int absMethod(int param) throws Exception;
+E. strictfp float f;
+
+Answer:
+A. abstract int absMethod(int param) throws Exception;
+
+
+
+
+Question 10
+
+What will the following program print?
+
+public class InitTest{
+	public InitTest() {
+		s1 = sM1("1");
+	}
+
+	static String sl = sM1("a");
+	String s3 = sM1("2");{
+		s1 = sM1("3");
+	}
+
+	static{
+		s1 = sM1("b");
+	}
+
+	static String s2 = sM1("c");
+	String s4 = sM1("4");
+	public static void main(String args[])
+		InitTest it = new InitTest();
+	}
+
+	private static String sMI(String s){
+		System.out.println(s); returns;
+	}
+}
+
+Select 1 option
+
+A. The program will not compile.
+B. It will print : a b c 2 3 4 1
+C. It will print : 2 3 4 1 a b c
+D. It will print : 1 a 2 3 b c 4
+E. It will print : 1 a b c 2 3 4
+
+Answer:
+B. It will print : a b c 2 3 4 1
+
+
+
+
+Question 12. Which line(s) will make the following code throw an error?
+class StaticTest{
+	void m1(){
+		StaticTest.m2();
+		m4();
+		StaticTest.m3();
+	}
+
+	static void m2(){}
+	void m3(){
+	ml();
+	m2();
+	StaticTest.ml();
+	}
+	static void m4(){}
+}
+
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+F. 6
+G. 7
+
+Answer:
+C. 3
+G. 7
+
+
+
+
+
+Question 15
+What be the result of attempting to compile and run the following program?
+
+public class TestCIass{
+	public static void main(String args[]){
+		Object a, b, c;
+		a = new String("A");
+		b = new String("B");
+		c = a;
+		a = b;
+		System.out.println(" " + c);
+	}
+}
+
+Select 1 option
+
+A. The program will print java.lang.String@XXX, where XXX is the memory location of the object a.
+B. The program will print A
+C. The program will print B
+D. The program will not compile as a,b and c are of type Object.
+E. The program will print java.lang.String@XXX, where XXX is the hash code of the object a.
+
+Answer:
+B. The program will print A
+
+Explanation:
+In the code, three variables a, b, and c of type Object are declared.
+The object a is assigned a new String object created with the value "A".
+The object b is assigned a new String object created with the value "B".
+The variable c is then assigned the value of a, which is the reference to the "A" string object.
+Next, the variable a is assigned the value of b, which is the reference to the "B" string object.
+Finally, the println statement prints the value of c, which is the reference to the "A" string object.
+
+
+
+Question 21
+What will the following program print when compiled and run:
+public class TestCIass {
+	public static void main(String[] args) {
+		someMethod();
+	}
+	static void someMethod(Object parameter) {
+System.out.println("Value is "+parameter);
+	}
+}
+
+Select 1 option
+
+A. It will not compile.
+B. Value is null
+C. Value is
+D. It will throw a NullPointerException at run time.
+
+Answer:
+A. It will not compile.
+
+Explanation:
+The given program will not compile because the method someMethod() is called without any arguments in the main() method, but it is defined to expect an Object parameter.
+
+
+
+
+Question 22
+What be the result of attempting to compile and run the following class?
+public class InitTest{
+	static String sl = sM1("a");{
+		s1 = sM1("b");
+	}
+	static{
+		s1 = sM1("c");
+	}
+	public static void main(String args[]){
+		InitTest it = new InitTest();
+}private static String sM1(String s){
+System.out.println(s); retum s;
+}}
+
+Select 1 option
+
+A. The program will fail to compile.
+B. The program will compile without error and will print a, c and b in that order when run.
+C. The program will compile without error and will print a, b and c in that order when run.
+D. The program will compile without error and will print c, a and b in that order when run.
+E. The program will compile without error and will print b, c and a in that order when run.
+
+Answer:
+B. The program will compile without error and will print a, c and b in that order when run.
+
+Explanation:
+When the class InitTest is loaded, the static block is executed before any other code. 
+In the static block, the method sM1("c") is called, which prints "c" and returns "c". 
+Thus, the output "c" is printed first.
+Next, the static variable sl is initialized with the result of sM1("a"), which prints "a" and returns "a". 
+However, since sl is never used or referenced, it doesn't affect the output.
+After that, the instance block is executed. 
+In the instance block, the method sM1("b") is called, which prints "b" and returns "b". 
+Thus, the output "b" is printed.
+Finally, the main() method creates an instance of InitTest, but it doesn't affect the output.
+
+
+
+
+Question 24
+Consider the following method:
+
+public void myMethod(int m, Object p, double d)
+{...valid code here}
+Assuming that there is no other method with the same name, which of the following options are
+correct regarding the above method?
+
+A. If this method is called with two parameters, the value of d in the method will be 0.0.
+B. If this method is called with one parameter, the value of p and d in the method will be null and 0.0 respectively.
+C. If this method is called with one parameter, the call will throw a NullPointerException.
+D. If this method is called with one parameter, the call will throw a NullPointerException only if the code in the method tries to access p.
+E. If this method is called with two parameters, the code will not compile.
+
+Answer:
+E. If this method is called with two parameters, the code will not compile.
+
+
+
+
+Question 25
+
+What will be the output when the following program is run?
+public class TestClass{
+	char c;
+	public void ml(){
+	char[] CA = {'a', 'b'};
+	m2(c, cA);
+	System.out.println( ( (int)c) + "," + cA[1] );
+	}
+
+	public void m2(char c, char[] cA){
+		c = 'b';
+		cA[1] = cA[0] = 'm';
+	}
+
+	public static void main(String args[]{
+		new TestClass().ml();
+	}
+}
+
+A. Compile time error.
+B. , m
+C. 0 , m
+D. b , b
+E. b , m
+
+Answer:
+C. 0, m
+
+Explanation:
+In the ml() method, a local char array CA is created with elements 'a' and 'b'. 
+The instance variable c is uninitialized and will have the default value of '\u0000'.
+The m2() method is called, passing the instance variable c and the char array CA as arguments.
+In the m2() method, the local variable c is assigned the value 'b', modifying the value of the method parameter but not affecting the instance variable c.
+The elements of the char array CA are both assigned the value 'm'.
+Returning to the ml() method, the println() statement is executed.
+The first part of the println() statement, ( (int)c), converts the uninitialized instance variable c to its corresponding integer representation, which is 0.
+The second part of the println() statement, cA[1], prints the second element of the char array CA, which is 'm'.
+The output is "0, m".
+
+
+
+
+
+Question 26
+Consider the following class definition:
+public class TestClass{
+public static void main(){ new TestClass().sayHello(); )//1
+public static void sayHello(){System.out.println("Static Hello World"); public void sayHello() {
+System.out.println("Hello World); }//3
+}
+
+What will be the result of compiling and running the class?
+
+A. It will print Hello World.
+B. It will print Static Hello World.
+C. Compilation error at the line between line 1 and line 3.
+D. Compilation error at line 3.
+E. Runtime Error.
+
+Answer:
+C. Compilation error at the line between line 1 and line 3.
+
+
+
+
+Question 27
+What will the following program print?
+public class TestClass{
+	static int = 10;
+	public static void changelt(int a){
+		a = 20;
+	}
+	public static void main(String[] args){
+		changelt(somelnt);
+		System.out.println(someInt); } }
+
+A. 10
+B. 20
+C. It will not compile.
+D. It will throw an exception at runtime.
+E. None of the above.
+
+Answer:
+A. 10
+
+Explanation:
+The program declares a static variable someInt and initializes it with the value 10.
+The program calls the method changeIt with the value of someInt as an argument.
+Inside the changeIt method, the parameter a is assigned the value 20. 
+However, this change does not affect the value of someInt outside of the method because Java passes arguments by value.
+After calling changeIt, the program prints the value of someInt, which remains unchanged at 10
+
+
+
+
+
+Question 28
+Which of the following are true about the "default" constructor? Select 2 options
+
+A. It is provided by the compiler only if the class does not define any constructor.
+B. It initializes the instance members of the class.
+C. It calls the 'no-args' constructor of the super class.
+D. It initializes instance as well as class fields of the class.
+E. It is provided by the compiler if the class does not define a 'no- args' constructor.
+
+Answer:
+A. It is provided by the compiler only if the class does not define any constructor.
+C. It calls the 'no-args' constructor of the superclass.
+
+Explanation:
+A. The default constructor is provided by the compiler if the class does not define any constructor explicitly. 
+If the class defines any constructor, including parameterized constructors, the compiler does not provide a default constructor.
+
+C. The default constructor, if present, implicitly calls the "no-args" constructor of the superclass. 
+This ensures that the superclass is properly initialized before initializing the subclass.
+
+
+
+
+Question 29
+You can call only public and protected constructors of the super class from a subclass if the subclass is not in the same package because only those are inherited.
+
+True
+False
+
+Answer:
+True
+
+
+
+
+
+Question 30
+What will be the result of attempting to compile the following program?
+public class TestClass{
+	long l1;
+	public void TestClass(long pLong) {l1 = pLong;} //(1)
+	public static void main(String args[]){
+		TestClass a, b;
+		a = new TestClass();//(2)
+		b = new TestClass(5); //(3)
+	}
+}
+
+A. A compilation error will be encountered at (1), since constructors should not specify a return value.
+B. A compilation error will be encountered at (2), since the class does not have a default constructor.
+C. A compilation error will be encountered at (3).
+D. The program will compile correctly.
+E. It will not compile because parameter type of the constructor is different than the type of value passed to it.
+
+Answer:
+C. A compilation error will be encountered at (3).
+
+Explanation:
+At (1), the provided code mistakenly defines a constructor with the same name as the class. 
+However, the constructor declaration should not have a return type. 
+To fix this, the constructor declaration should be modified to public TestClass(long pLong).
+At (2), the code attempts to create an instance of TestClass without passing any arguments. 
+Since a parameterized constructor is defined in the class, the default constructor is not automatically provided by the compiler. 
+Therefore, a compilation error will be encountered at (2). 
+To fix this, you can either provide a default constructor explicitly or provide arguments when creating an instance.
+At (3), the code correctly creates an instance of TestClass by calling the parameterized constructor and passing the value 5 as an argument.
+
+
+
+
+Question 31
+Which of the following are true about the "default" constructor?
+
+A. It is provided by the compiler only if the class and any of its super classes does not define any constructor.
+B. It takes no arguments.
+C. A default constructor is used to return a default value.
+D. To define a default constructor, you must use the default keyword.
+E. It is always public.
+
+Answer:
+A. It is provided by the compiler only if the class and any of its super classes does not define any constructor.
+B. It takes no arguments.
+E. It is always public.
+
+Explanation:
+B. The default constructor is a constructor that takes no arguments. 
+It is provided by the compiler when no constructor is explicitly defined in the class. 
+This default constructor allows the creation of objects without supplying any arguments.
+
+E. The default constructor, if generated by the compiler, is always public. 
+This allows it to be accessible from other parts of the code and enables the instantiation of objects of that class.
+
+
+
+
+Question 33
+Given a class named Test, which of these would be valid definitions for the constructors for the class?
+
+A. Test(Test b) { }
+B. Test Test( ) { }
+C. private final Test( ) { }
+D. void Test( ) { }
+E. public static void Test(String args[ ] ) { }
+
+Answer:
+A. Test(Test b) { }
+
+Explanation:
+A. Test(Test b) { }: This is a valid constructor definition that takes an argument of type Test. 
+It allows creating an object of the class Test by passing another object of type Test as an argument.
+
+
+
+
+Question 36
+Which of the statements regarding the following code are correct?
+public class TestClass{
+	static int a;
+	int b;
+	public TestClass(){
+	int c;
+	c = a;
+	b += c;
+	}
+	public static void main(String args[]) { new TestClass(); }
+}
+
+Select 1 option
+
+A. The code will fail to compile because the constructor is trying to access static members.
+B. The code will fail to compile because the constructor is trying to use static member variable a before it has been initialized.
+C. The code will fail to compile because the constructor is trying to use member variable b before it has been initialized.
+D. The code will fail to compile because the constructor is trying to use local variable c before it has been initialized.
+E. The code will compile and run without any problem.
+
+Answer:
+E. The code will compile and run without any problem.
+
+Explanation:
+The provided code will compile and run without any issues. Here's the breakdown of the code:
+
+The class TestClass is defined with two variables: a static variable a and an instance variable b. 
+Both variables are not explicitly initialized, so they will be assigned their default values (0 for int type).
+The class has a constructor TestClass(), which is called when a new instance of TestClass is created.
+Inside the constructor, a local variable c is declared but not explicitly initialized. 
+Local variables in Java are automatically assigned a default value (for int, the default value is 0), so c is initialized to 0.
+The value of the static variable a is assigned to c.
+The value of c is added to the instance variable b using the compound assignment operator (+=).
+The main method creates a new instance of TestClass using the constructor new TestClass().
+
+
+
+Question 37
+Which line of code will not be acceptable to the compiler?
+public class XBOX{
+	volatile int root = 20; //1
+	private XBOX() //2
+	{
+		volatile int i = 30; //3
+	}
+	private void XBOX() //4
+	{
+		int local = 30;
+	}
+}
+
+Select 1 option
+
+A. 1
+B. 2
+C. 3
+D. 4
+E. The code will compile fine.
+
+Answer:
+C. 3
+
+
+
+
+Question 38
+Consider the following code:
+public abstract class TestClass{
+	public abstract void ml();
+	public abstract void m2(){
+		System.out.println("hello");
+	}
+}
+
+Which of the following corrections can be applied to the above code (independently) so that it compiles without any error?
+
+Select 2 options
+
+A. Replace the method body of m2() with a ; (semi-colon).
+B. Replace the ; at the end of m1() with a method body.
+C. Remove abstract from m2().
+D. Remove abstract from the class declaration.
+
+Answer:
+A. Replace the method body of m2() with a ; (semi-colon).
+C. Remove "abstract" from m2().
+
+Explanation:
+Removing the "abstract" keyword from m2() would make it a concrete method with a method body. 
+Concrete methods must have a method body and cannot be abstract.
+
+
+
+
+Question 39
+What will the following class print when compiled and run?
+class Holder{
+	int value = 1;
+	Holder link;
+	public Holder(int val){ this.value = val;}
+	public static void main(String[] args){
+		final Holder a = new Holder(5);
+		Holder b = new Holder(10);
+		a.link = b;
+		b.link = setIt(a, b);
+		System.out.println(a.link.value+" "+b.link.value);
+	}
+	public static Holder setlt(final Holder x, final Holder y){
+	x.link = y.link;
+	return x;
+	}
+}
+
+A. It will not compile because 'a' is final.
+B. It will not compile because method setIt() cannot change x.link.
+C. It will print 5, 10.
+D. It will print 10, 10.
+E. It will throw an exception when run.
+
+Answer:
+E. It will throw an exception when run.
+
+
+
+Question 40
+
+What is the result of compiling and running the following code ?
+public class TestClass{
+	static int si = 1O;
+	public static void main (String args[]){
+		new TestClass();
+	}
+	public TestClass(){
+		System.out.println(this);
+	}
+public String toString(){
+	return "TestClass.si = "+this.si;
+	}
+}
+
+A. The class will not compile because you cannot override toString() method.
+B. The class will not compile as si being static, this.si is not a valid statement.
+C. It will print TestClass@nnnnnnnn, where nnnnnnn is the hash code of the
+TestClass object referred to by 'this'.
+D. It will print TestClass.si = 10;
+E. None of the above
+
+
+
+Question 41
+Given:
+class Triangle(
+	public int base;
+	public int height;
+	public double area = O;
+	public Triangle(int base, int height){
+		this.base = base;
+		this.height = height;
+		updateArea();}
+	public void updateArea(){
+		double a = base*height/2;
+		area = a;}
+	public void setBase(int b){
+		base = b; updateArea();}
+	public void setHeight(int h){
+		height = h;
+		updateArea();}}
+
+Which variables are not accessible from anywhere within given class code (except from where they
+are declared)?
+
+A. base, height, area
+B. area, b, h
+C. base, height
+D. b, h, a
+
+Answer:
+C. base, height
+D. b, h, a
+
+Explanation:
+In the code provided, variables b, h, and a are declared locally within the updateArea() method. 
+They are not accessible outside of that method and cannot be accessed from other parts of the class. 
+On the other hand, variables base, height, and area are declared at the class level and can be accessed and modified by any method within the class.
+
+
+
+
+
+Question 42
+
+What will the following code print when run?
+class A{
+	String value = "test"; A(String val){
+		this.value = val;
+	}
+}
+public class TestClass {
+public static void main(String[] args) throws Exception {
+	new A("new test").print();
+	}
+}
+
+test
+new test
+It will not compile.
+It will throw an exception at run time
+
+Answer:
+C. It will not compile.
+
+Explanation:
+The given code will not compile because the class A does not have a method called print().
+
+
+
+
+
+
+Question 43
+Which of the following are true regarding overloading of a method?
+
+A. An overloading method must have a different parameter list and same return type as that of the overloaded method.
+B. If there is another method with the same name but with a different number of arguments in a class then that method can be called as overloaded.
+C. If there is another method with the same name and same number and type of arguments but with a different return type in a class then that method can be called as overloaded.
+D. An overloaded method means a method with the same name and same number and type of arguments exists in the super class and sub class.
+
+Answer:
+B. If there is another method with the same name but with a different number of arguments in a class, then that method can be called as overloaded.
+
+
+
+
+
+Question 44 ( Select 2 options)
+
+class TestClass{
+void probe(int... x) { System.out.println("ln ..."); } //1
+void probe(lnteger x) { System.out.println("ln Integer"); ) //2
+void probe(long x) { System.out.println("ln long"); } //3
+void probe(Long x) { System.out.println("ln LONG"); //4
+public static void main(String[] args){
+Integer a = 4; new TestClass().probe(a); //5
+int b — 4; new TestClass().probe(b); //6
+}
+}
+
+What will it print when compiled and run?
+
+A. In Integer and In long
+B. In ... and In LONG, if //2 and //3 are commented out.
+C. In Integer and In ..., if //4 is commented out.
+D. It will not compile, if //1, //2, and //3 are commented out.
+E. In LONG and In long, if //1 and //2 are commented out.
+
+Answer:
+A. In Integer and In long
+D. It will not compile, if //1, //2, and //3 are commented out.
