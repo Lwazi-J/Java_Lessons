@@ -37,25 +37,4 @@ f.BLACK
 The following is an example of an enumeration AKA enum for short. 
 It looks similar to a normal class but there are some minor differences.
 
-Example:
-public enum Day {
-	MONDAY,
-	TUESDAY,
-	WEDNESDAY;
-	THURSDAY;
-	FRIDAY;
-	SATURDAY;
-	SUNDAY;
-}
-
 An enum is a special "class" that represents a group of constants (unchangeable variables, like final variables).
-
-public enum Day {
-	RED,
-        YELLOW,
-        BLUE,
-        GREEN,
-        WHITE,
-        BLACK;
-}
-
