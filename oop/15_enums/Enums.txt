@@ -1,0 +1,61 @@
+Constant
+
+Definition:
+occurring continuously over a period of time
+Example 1:
+the condition of struggle remained a constant
+Example 2:
+occurring continuously over a period of time
+
+
+
+Enumeration
+
+Definition:
+the action of mentioning a number of things one by one.
+Example 1:
+the complete enumeration of all possible genetic states
+Example 2:
+detailed enumeration of the income of the household
+
+
+
+Some things in life are constant and never change no matter what happens. 
+Like the hours in a day or days of a week. 
+There are many other groups of things which can be referred to as constant. 
+Supply a list of a group of things that can be 2 or more that always stay that way. Like planets of our solar systems.
+
+Answer:
+a.RED
+b.YELLOW
+c.BLUE
+d.GREEN
+e.WHITE
+f.BLACK
+
+
+The following is an example of an enumeration AKA enum for short. 
+It looks similar to a normal class but there are some minor differences.
+
+Example:
+public enum Day {
+	MONDAY,
+	TUESDAY,
+	WEDNESDAY;
+	THURSDAY;
+	FRIDAY;
+	SATURDAY;
+	SUNDAY;
+}
+
+An enum is a special "class" that represents a group of constants (unchangeable variables, like final variables).
+
+public enum Day {
+	RED,
+        YELLOW,
+        BLUE,
+        GREEN,
+        WHITE,
+        BLACK;
+}
+
