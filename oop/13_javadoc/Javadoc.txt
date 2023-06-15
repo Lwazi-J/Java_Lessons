@@ -1,0 +1,93 @@
+Tag:
+A label placed on something or someone to use as identification or to provide additional information
+
+Deprecate:
+Deprecation denotes that something is available or permitted but not advised.
+
+
+Javadoc is short for Java documentation.
+Javadoc is written as comments on a java files. 
+The comments must start with /** and end with */.
+
+There are multiple ways that javadoc comments can be written in:
+Basic format.
+
+/**
+ Javadoc comment
+ */
+
+Recommended * margin format:
+The  first line starts with /**.
+All the other lines start with *
+The last line contains */
+
+ /**
+  *
+  * Javadoc comment
+  *
+  */
+
+Fancy decorative.
+ /****************************************\
+  *Javadoc comment
+  *
+ \****************************************/
+
+
+
+Class-level javadoc tags. 
+A javadoc tag is a specail keyword which if used in a javadoc comment produces a special kind of output in the generated html.
+
+<Image that shows class-level>
+The following tags can be used at a class level.
+
+Tag					Description								Example
+@author					Is used to indicate the author of the class.				@author Sello
+@version				Indicate the version of the code					@version 1.3
+@see					Links to a target that may be relate to this one. 
+					The target may be a class, method, constructor field or package		@See <Target>
+														@see #field
+														@see #Constructor(Type, Type...)
+														@see #Constructor(Type id, Type id...)
+														@see #method(Type, Type,...)
+														@see #method(Type id, Type, id...)
+														@see Class
+														@see Class#field
+														@see Class#Constructor(Type, Type...)
+														@see Class#Constructor(Type id, Type id)
+														@see Class#method(Type, Type,...)
+														@see Class#method(Type id, Type id,...)
+														@see package.Class
+														@see package.Class#field
+														@see package.Class#Constructor(Type, Type...)
+														@see package.Class#Constructor(Type id, Type id)
+														@see package.Class#method(Type, Type,...)
+														@see package.Class#method(Type id, Type, id)
+														@see package
+
+
+@since					Version at which this feature or class was added.			@since 1.3
+{@link}					An inline link to a target or url. 
+					Target can be any of the targets specified by the @see tage		{@link TagertClass description}
+@deprecated				Indicates that the use of this class is discouraged and 
+					usually indicates an alternative.					@deprecated 
+														This class is no longer in use use 
+														{@link NewClass NewClass} instead.
+
+
+
+
+
+Method-level javadoc tags. 
+This section discusses tags that are used at the methods to produce desired javadoc documentation for the method.
+The following tags can be used at a method level.
+
+
+Tag			Description									Example
+@param			Describes each parameter to a method.						@param name Name of the caller.
+@return			Describes the return value of a method						@return true if the parameter is 4 else returns false
+@throws			Explains an exceptions that is thrown by a method				@throws SpecialException Indicates something special happened.
+@exception		same as @throws									@exception SpecialException Indicates something special happened.
+@see			@see links to another target that may be related to the current method.		@see ClassName#Method(ParamType)
+@since			Denotes the version at which a method was added to a class			@since 1.6
+

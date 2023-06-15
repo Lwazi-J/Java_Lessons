@@ -1,0 +1,228 @@
+Question 1
+What will the following code print when compiled and run?
+class ABCD{
+	int x= 1O;
+	static int y = 20;
+}class MNOP extends ABCD{
+	int x = 30;
+	static int y = 40;
+}
+public class TestClass {
+public static void main(String[] args) {
+	System.out.println(new MNOP().x + "," + new MNOP().y);
+	}
+}
+select 1 option
+
+A. 10, 40
+B. 30, 20
+C. 10, 20
+D. 30, 40
+E. 20, 30
+F. Compilation error
+
+Answer:
+D. 30, 40
+
+Explanation:
+The code creates an instance of the MNOP class using new MNOP() and then accesses the x and y variables using new MNOP().x and new MNOP().y, respectively.
+Since x is defined as 30 in the MNOP class, it will print 30 as the value of x. 
+Similarly, y is a static variable and its value is 40 in the MNOP class. 
+Therefore, it will print 40 as the value of y. The output will be 30, 40.
+
+
+
+
+Question 3
+Which of these statements are true?
+Select 2 options
+
+A. A super( ) or this( ) call must always be provided explicitly as the first statement in the body of the constructor.
+B. If a subclass does not have any declared constructors, the implicit default constructor of the subclass will have a call to super( ).
+C. If neither super( ) or this( ) is declared as the first statement of the body of a constructor, then this( ) will implicitly be inserted as the first statement.
+D. super(...) can only be called in the first line of the constructor but this(...) can be called from anywhere.
+E. You can either call super(...) or this(...) but not both
+
+Answer:
+B. If a subclass does not have any declared constructors, the implicit default constructor of the subclass will have a call to super( ).
+E. You can either call super(...) or this(...) but not both.
+
+Explanation:
+B. If a subclass does not have any declared constructors, the compiler automatically inserts a default constructor. 
+This default constructor includes a call to the superclass constructor using super(). 
+This ensures that the superclass is properly initialized before the subclass.
+
+
+
+
+Question 5
+Which of these statements are true?
+Select 2 options
+
+A. Private methods cannot be overridden in subclasses.
+B. A subclass can override any method in a non-final superclass.
+C. An overriding method can declare that it throws a wider spectrum of checked exceptions than the method it is overriding.
+D. The parameter list of an overriding method must be a subset of the parameter list of the method that it is overriding.
+E. The overriding method may opt not to declare any throws clause even if the original method has a throws clause.
+
+Answer:
+A. Private methods cannot be overridden in subclasses.
+E. The overriding method may opt not to declare any throws clause even if the original method has a throws clause
+
+Explanation:
+A. This statement is true. 
+Private methods are not accessible to subclasses, so they cannot be overridden. 
+Overriding is the concept of providing a different implementation of a method in a subclass, but since private methods are not visible in the subclass, they cannot be overridden.
+
+E. This statement is true. 
+The overriding method is not required to declare any throws clause, even if the original method has a throws clause. 
+This is because the throws clause specifies the checked exceptions that may be thrown by the method, and the overriding method is allowed to choose not to throw any of those exceptions or to throw fewer exceptions. 
+However, it cannot throw broader exceptions than the original method.
+
+
+
+
+
+Question 6
+What will the following program print when compiled and run?
+
+class Game{
+	public void play() throws Exception {
+		System.out.println("Playing ...");
+	}
+}
+public class Soccer extends Game {
+	public void play() {
+		System.out.println("Playing Soccer...");
+	}
+	public static void main(String[] args){
+		Game g = new Soccer();
+		g.play();
+	}
+}
+
+Selct 1 option
+
+A. It will not compile.
+B. It will throw an Exception at runtime.
+C. Playing Soccer...
+D. Playing...
+E. None of these.
+
+Answer:
+A. It will not compile.
+
+Explanation:
+The given program will not compile due to a compilation error.
+The issue is with the play() method in the Soccer class. 
+When overriding a method, the subclass method cannot throw a broader range of checked exceptions or new checked exceptions that are not declared in the superclass method.
+
+In this case, the play() method in the Game class declares that it throws an Exception, but the play() method in the Soccer class does not declare any exceptions. 
+This is not allowed, and the compiler will produce an error.
+
+
+
+
+
+
+Question 7
+Given the following class definition:
+class A {
+	protected int i;
+	A(inti) { this.i = i; }
+} // 1 : Insert code here
+Which of the following would be a valid class that can be inserted at // I ?
+Select 2 options
+
+A. class B {}
+B. class B extends A {}
+C. class B extends A { B() { System.out.println("i = " + i); } }
+D. class B { B() {} }
+
+Answer:
+A. class B {}
+D. class B { B() {} }
+
+Explanation:
+Option A, class B {}, is a valid class as it doesn't require access to the protected member i and doesn't need to initialize it.
+
+Option D, class B { B() {} }, is also a valid class as it satisfies both conditions. 
+Although it doesn't extend class A, it doesn't need to access the protected member i and doesn't require initialization.
+
+
+
+
+
+Question 9
+Which statements concerning the following code are true?
+class A {
+	public A() {l // A1
+	public A(String s) { this(); System.out.println("A :"+s); } // A2
+}
+class B extends A {
+	public int B(String s) { System.out.println("B :"+s); return 0; } // B1
+}
+class C extends B {
+	private C(){ super(); } // Cl
+	public C(String) {this(); System.out.println("C :"+s); } // C2
+	public C(int i) {} // C3
+}
+Select 4 options
+
+A. At least one of the constructors of each class is called as a result of constructing an object of class C.
+B. Constructor at //A2 will never be called in creation of an object of class C
+C. Class C can be instantiated only in two ways by users of this class.
+D. //B1 will never be called in creation of objects of class A, B, or C
+E. The code will not compile.
+
+Answer:
+A. At least one of the constructors of each class is called as a result of constructing an object of class C.
+B. Constructor at //A2 will never be called in creation of an object of class C
+C. Class C can be instantiated only in two ways by users of this class.
+D. //B1 will never be called in creation of objects of class A, B, or C
+
+Explanation:
+A. At least one of the constructors of each class is called as a result of constructing an object of class C.
+This statement is true. 
+When creating an object of class C, the constructor of class C is always called.
+Additionally, the constructor of its superclass B, and the constructor of its superclass A (either the default constructor or the one with the String parameter) will be called as well.
+
+B. Constructor at //A2 will never be called in the creation of an object of class C.
+This statement is true. 
+The constructor at //A2 in class A will not be called directly in the creation of an object of class C. 
+It is called indirectly through the constructor in class A that is invoked by the super() call in the private constructor of class C.
+
+C. Class C can be instantiated only in two ways by users of this class.
+This statement is true. 
+Class C can be instantiated using the constructor C(String) or C(int). 
+The private constructor C() is only accessible within the class itself and cannot be used by users of the class.
+
+D. //B1 will never be called in the creation of objects of class A, B, or C.
+This statement is true. 
+The method //B1 in class B is not a constructor, and it is never called in the creation of objects of classes A, B, or C. It is a regular method that returns an int value.
+
+
+
+
+Question 10
+Consider the following class hierarchy shown in the image. (Bl and B2 are subclasses of A
+and C1, C2 are subclasses of B 1)
+Assume that method public void } is defined in all of these classes
+EXCEPT B1 and C1.
+Assume that "objectOfXXX" means a variable that points to an object of class XX. So, objectOfC1
+means a reference variable that is pointing to an object of class C1.
+Which of the following statements are correct?
+Select 1 option
+
+A. objectOfC1.m1(); will cause a compilation error.
+B. objectOfC2.m1(); will cause A's m1() to be called.
+C. objectOfC1.m1(); will cause A's m1() to be called.
+D. objectOfB1.m1(); will cause an exception at runtime.
+E. objectOfB2.m1(); will cause an exception at runtime
+
+Answer:
+C. objectOfC1.m1(); will cause A's m1() to be called.
+
+Explanation:
+Since C1 is a subclass of B1 and B1 is a subclass of A, objectOfC1 inherits the method m1() from class A. 
+Therefore, when objectOfC1.m1() is called, it will invoke A's m1() method.:
