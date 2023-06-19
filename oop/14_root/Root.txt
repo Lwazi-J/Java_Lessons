@@ -1,0 +1,26 @@
+OOP 10  Root of all objects
+
+Explicit
+
+Definition: stated clearly and in detail, leaving no room for confusion or doubt
+Example 1: the arrangement had not been made explicit
+Example 2: They were given explicit instructions
+
+
+Implicit
+
+Definition: suggested though not directly expressed
+Example 1: comments seen as implicit criticism of the policies
+Example 2: the values implicit in the school ethos
+
+Root
+
+Definition: the part of a plant which attaches it to the ground or to a support / the basic cause, source, or origin of something
+Example 1: money is the root of all evil
+Example 2: cacti have deep and spreading roots
+
+
+All Objects in Java extend Object. If you write a class and you do not explicitly specify its super-class then it will implicitly extends Object. 
+The compiler write the extends Object line for you. 
+That line is not visible but is assumed to be there.
+
