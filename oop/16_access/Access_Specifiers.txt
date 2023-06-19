@@ -1,0 +1,47 @@
+OOP 13 Access Modifiers
+
+
+Access
+
+Definition: the capability or chance to approach or enter a location.
+Example: the staircase gives access to the top floor
+Example: information can be accessed from several files and displayed at the same time
+
+
+Modifier
+
+Definition: a person or thing that makes partial or minor changes to something
+Example 1: mood modifiers like Valium and Lithium
+Example 2: It contains friction modifier which is recommended for limited-slip units.
+
+
+
+Access Modifier
+
+Definition: Access modifiers are keywords in object-oriented languages that set the accessibility of classes, methods, and other members
+Example 1: private - the property or method can ONLY be accessed within the class.
+Example 2: public - the property or method can be accessed from everywhere. This is default.
+
+
+Access Modifier is a special keyword that controls access to a particular part of the program. 
+As in real life somethings are private and you do not want to share with anybody so too can programs. 
+The following are possible access levels that a program may grant:
+private
+protected
+default aka package
+public
+
+Private:
+There are certain things that you are not willing to share even with you family. e.g Toothbrush. 
+A class can have member variables or methods which it is not willing to share with any other class including those that extend it. 
+Such a variable or method is defined by access-modifier private.
+
+Protected:
+There are certain things that you are only willing to share with you children. 
+Like money. A class can have a member variable or method which it only wants to allow sub-classes to access. 
+Such a variable of method is defined with a protected access-modifier keyword.
+
+Default:
+If you do not provide an access modifier for a member variable or method it gets the default access modifier. 
+The default access modifier is not visible but is implicitly place by the compiler and is assumed to be there if nothing is placed. 
+It is also referred to as the package access modifier because it restrict access to only those within the same package as the class in question.
