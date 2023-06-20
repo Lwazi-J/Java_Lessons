@@ -1,0 +1,1 @@
+In both examples, the "has-a" relationship is established by including an instance of one class as a member variable within another class. This allows one class to contain or use objects of another class as part of its implementation.

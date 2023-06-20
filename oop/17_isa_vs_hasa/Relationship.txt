@@ -1,0 +1,52 @@
+OOP 14 Is a vs Has a
+
+In Java, both "is-a" and "has-a" relationships are used to establish associations between classes. 
+However, they represent different types of relationships and are implemented in distinct ways.
+
+
+Is-a Relationship (Inheritance)
+
+The "is-a" relationship, also known as inheritance or specialization, represents a relationship where one class is a specialized version of another class. 
+It denotes an "is-a" or "is a kind of" relationship. 
+Inheritance allows a subclass to inherit the properties and behaviors (i.e., fields and methods) of a superclass. 
+The subclass can then extend or override these inherited features, as well as define its own specific characteristics. 
+In Java, the "is-a" relationship is implemented using the extends keyword.
+
+Example:
+
+class Animal {
+   // Common properties and behaviors of animals
+}
+
+class Dog extends Animal {
+   // Dog-specific properties and behaviors
+}
+
+In this example, the class Dog "is-a" type of Animal, as dogs are a specific kind of animal. 
+The class Dog inherits the properties and behaviors defined in the Animal class.
+
+
+
+Has-a Relationship (Composition)
+
+The "has-a" relationship, also known as composition or aggregation, represents a relationship where one class has a reference to another class as a member or attribute. 
+It denotes a "has-a" or "contains" relationship. 
+Composition allows a class to use objects of other classes as its members, thereby incorporating their behavior and attributes. 
+The class that has the reference is called the container class, and the class being referred to is called the contained class. 
+In Java, the "has-a" relationship is typically implemented by creating an instance variable of the contained class within the container class.
+
+Example:
+
+class Car {
+   private Engine engine;
+   // Other car properties and behaviors
+   
+   public Car() {
+      engine = new Engine();
+   }
+}
+
+In this example, the class Car "has-a" relationship with the Engine class. 
+The Car class contains an instance variable engine of type Engine. 
+It can utilize the behavior and attributes of the Engine class by interacting with this instance variable.
+
