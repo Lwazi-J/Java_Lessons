@@ -1,0 +1,63 @@
+OOP 15 Overriding and Overloading
+
+Override
+
+Definition: to prevail or have dominance over; have final authority or say over; overrule: to override one's advisers.
+to disregard, set aside, or nullify; countermand: to override the board's veto.
+Example 1: These new rules override the old ones.
+Example 2: She overrode the default settings on her computer.
+
+
+
+Overload
+
+Definition: to load (something or someone) to excess: such as. : to put too large a load on or in (something) overload a ship. 
+overload a washing machine. Overloading the trailer poses a safety risk.
+Example 1: Don't overload the boat or it will sink.
+Example 2: The greatest danger is that we simply create information overload for our executives.
+
+
+
+Shadow
+
+Definition: a dark area or shape produced by a body coming between rays of light and a surface.
+Example 1: The tree cast a long shadow across the lawn.
+Example 2: Part of the valley was in shadow.
+
+
+The following program has a compilation error.
+
+Example
+JohnOver.java
+public Class JohnOver{
+    public Stirng getName(){
+        return "John";
+    }
+    public Stirng getName(){
+        return "Peter";
+    }
+}
+
+
+What is wrong with the above program?
+
+Answer:
+The JohnOver class has two methods with the same signature, getName(). 
+It seems to be an error in the program where the method is defined twice with the same name. 
+This results in a compilation error as Java does not allow multiple methods with the same name and parameters in a class.
+To fix this issue, you need to provide different names for the methods or adjust their signatures (e.g., by using different parameters or return types) to make them distinct.
+
+
+Fix the above program so that it can compile.
+
+Paste your new program below
+public class JohnOver {
+    public String getName() {
+        return "John";
+    }
+
+    public String getLastName() {
+        return "Peter";
+    }
+}
+
