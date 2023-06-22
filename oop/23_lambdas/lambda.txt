@@ -1,0 +1,108 @@
+Lambdas
+
+Lambda functions in programming: 
+In computer programming, specifically in functional programming languages, a lambda function (or lambda expression) is an anonymous function that can be defined on the fly without explicitly naming it. 
+Lambda functions are often used when a short, one-time function is needed, and it doesn't require a separate definition. They are particularly popular in languages like Python, where they allow for concise and expressive code.
+
+Lambda (λ) in mathematics: 
+In mathematics, lambda often represents a variable or parameter in various mathematical equations and formulas. 
+It is commonly used in fields such as calculus, linear algebra, and mathematical logic. 
+For example, lambda calculus is a formal system in mathematical logic that uses lambda expressions to represent computations.
+
+Lambda expression:
+A lambda expression is a short block of code which takes in parameters and returns a value. 
+Lambda expressions are similar to methods, but they do not need a name and they can be implemented right in the body of a method.
+Example 1: parameter -> expression
+Example 2: (parameter1, parameter2) -> { code block }
+
+The syntax for a lambda expression typically involves specifying the input parameters (if any), followed by an arrow (->), and then the expression or statements that make up the function body. The result of the expression is implicitly returned.
+
+
+Functional programming (FP):
+is an approach to software development that uses pure functions to create maintainable software. 
+In other words, building programs by applying and composing functions.
+
+Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and emphasizes immutability and the avoidance of side effects. 
+It is based on the principles of lambda calculus and is focused on writing programs using pure functions that take inputs and produce outputs without modifying any external state.
+
+Here are some key concepts and characteristics of functional programming:
+
+Pure functions: 
+In functional programming, functions are pure, meaning they have no side effects and always produce the same output for the same input. 
+Pure functions do not modify global variables, mutate data, or perform I/O operations. 
+They rely only on their input parameters to calculate the output.
+
+Immutability: 
+Functional programming promotes immutability, where data is treated as immutable and cannot be modified once created. Instead of modifying existing data, functional programming emphasizes creating new data structures through transformations and operations.
+
+Higher-order functions: 
+Functional programming languages often support higher-order functions, which are functions that can take other functions as arguments or return functions as results. 
+Higher-order functions enable composition and abstraction, allowing for concise and modular code.
+
+Recursion: 
+Functional programming favors recursion over iteration for control flow. 
+Instead of using loops, recursive functions call themselves to solve a problem by breaking it down into smaller sub-problems.
+
+Function composition and pipelining: 
+Functional programming encourages the composition of functions, where the output of one function becomes the input to another. 
+This allows for the creation of complex operations by chaining simpler functions together. 
+Function pipelining, also known as the pipeline operator, is a syntactic construct that facilitates the composition of functions in a linear fashion.
+
+Lazy evaluation: 
+Lazy evaluation is a technique used in some functional programming languages where expressions are evaluated only when their results are actually needed. 
+This can lead to increased efficiency by avoiding unnecessary computations.
+
+
+
+Functional interfaces:
+are a concept in programming languages that support functional programming, particularly in languages that have first-class functions or support lambda expressions. 
+A functional interface is an interface that defines only one abstract method, often referred to as the functional method or the single abstract method (SAM).
+
+Functional interfaces are used to represent function types. 
+They provide a way to define and work with functions as values, allowing them to be passed as arguments, returned as results, or stored in variables. 
+By utilizing functional interfaces, languages can support functional programming constructs such as higher-order functions, lambda expressions, and method references.
+
+In languages like Java, functional interfaces serve as the foundation for the functional programming features introduced in Java 8 and later versions. 
+The java.util.function package in Java provides a set of predefined functional interfaces that cover common use cases, such as representing predicates, functions, consumers, suppliers, and more.
+
+Here's an example of a functional interface in Java:
+
+@FunctionalInterface
+interface MyFunction {
+    int apply(int x, int y);
+}
+
+In this example, MyFunction is a functional interface that defines a single abstract method apply that takes two integers as arguments and returns an integer. 
+The @FunctionalInterface annotation is optional but serves as a reminder that the interface is intended to be used as a functional interface. 
+If the interface has more than one abstract method, the compiler will throw an error.
+
+Functional interfaces allow developers to define lambda expressions or use method references to create instances of the interface. 
+
+Here's an example using a lambda expression:
+
+MyFunction add = (x, y) -> x + y;
+int result = add.apply(3, 4); // result will be 7
+
+In this example, a lambda expression (x, y) -> x + y is used to create an instance of the MyFunction interface. 
+The lambda expression specifies the behavior of the apply method, which adds two integers and returns the sum.
+
+Functional interfaces provide a way to work with functions in a more flexible and concise manner, enabling functional programming techniques and facilitating the creation of more expressive and modular code.
+
+
+Syntax
+
+
+parameter -> expression body
+
+No parameters:
+() -> System.out.println("Hello lambda");
+
+Single parameter:
+(param) -> System.out.println("Hello lambda");
+
+Multiple parameter:
+(param1, param2) -> System.out.println("Hello lambda");
+
+Assignment:
+MyInterface myInterface = () -> System.out.println("Hello lambda");
+
