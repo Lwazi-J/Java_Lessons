@@ -1,0 +1,31 @@
+Local classes have the following characteristics:
+
+Scope: 
+Local classes are only visible within the block of code where they are defined. 
+They cannot be accessed outside of that block, including in other methods or classes.
+
+Accessibility: 
+Local classes can access all the members (fields, methods, etc.) of the enclosing class, as well as local variables and parameters of the enclosing block. 
+However, they can only access final or effectively final local variables and parameters. 
+An effectively final variable is one that is not explicitly declared as final but is never modified after its initialization.
+
+Declaration: 
+Local classes are declared within a block using the syntax class ClassName { ... }. 
+They can have their own fields, methods, and constructors just like regular classes.
+
+Object Creation: 
+Objects of local classes can only be created within the block where they are defined. 
+Once the block is exited, the objects become unreachable, and their memory is eligible for garbage collection.
+
+Are local class is re-usable
+
+No, a local class is not inherently reusable outside of the block where it is defined. 
+Local classes are designed to be used within a specific context or scope and are not intended for widespread reuse in different parts of the codebase.
+
+The visibility of a local class is limited to the block in which it is defined, such as a method or a constructor. 
+Once the block is exited, the local class becomes inaccessible, and its objects cannot be created or used anymore.
+
+If you need a class that can be reused in multiple contexts or accessed from different parts of your codebase, it's more appropriate to define a top-level class or a nested class (static inner class or non-static inner class) with broader visibility and scope. 
+These types of classes can be instantiated and used in various parts of your program.
+
+
