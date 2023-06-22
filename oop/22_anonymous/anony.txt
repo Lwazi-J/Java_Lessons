@@ -1,0 +1,11 @@
+An anonymous class must be assigned on the same line that they are instantiated before they can be used. 
+It cannot be instantiated again. Once only and that's it.
+
+Rules for anonymous classes.
+
+An anonymous class always has a super-class or interface which is usually not Object.
+An anonymous class always overrides a method from the super-class.
+Anonymous classes are only ever create once.
+Anonymous classes cannot have a constructor.
+anonymous classes cannot have a name or be referenced by a name somehow.
+
