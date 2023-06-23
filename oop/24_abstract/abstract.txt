@@ -1,0 +1,67 @@
+OOP 16.4 Abstract Classes
+
+In programming, the term "abstract" refers to a concept or construct that is incomplete or not fully specified. 
+It is used to define classes, methods, or interfaces that provide a blueprint or template for other concrete classes to inherit from or implement.
+
+
+Here are a few key points about abstract entities in programming:
+
+Abstract Classes: 
+An abstract class is a class that cannot be instantiated on its own but serves as a base or superclass for other classes. 
+It may contain both abstract and non-abstract methods. 
+Abstract methods in an abstract class are declared without an implementation and are meant to be overridden by the subclasses. 
+Abstract classes provide common behavior and characteristics that can be shared by multiple subclasses.
+
+Abstract Methods: 
+An abstract method is a method that is declared in an abstract class or interface but does not have an implementation. 
+It is meant to be overridden and implemented by the concrete subclasses or classes that implement the interface. 
+Abstract methods provide a contract or a requirement for the classes that extend or implement them, specifying the method's signature without providing the actual implementation details.
+
+Interfaces: 
+Interfaces in programming can be thought of as fully abstract entities. 
+They define a contract or set of methods that must be implemented by any class that implements the interface. 
+Interfaces cannot be instantiated, but they serve as a reference type and provide a way to achieve polymorphism in Java and other languages.
+
+Abstraction and Encapsulation: 
+Abstraction is a fundamental concept in object-oriented programming, along with encapsulation. 
+Abstraction focuses on providing a simplified and high-level view of an entity or system, hiding the unnecessary details and exposing only the essential features. 
+It allows developers to work at a conceptual level without worrying about the implementation details.
+
+In summary, "abstract" in programming refers to entities (classes, methods, or interfaces) that are incomplete or not fully specified. 
+They provide a blueprint or contract that must be implemented or overridden by the concrete subclasses or classes that implement them. 
+Abstract entities promote code reuse, encapsulate common behavior, and allow for higher-level conceptualization of software systems.
+
+
+
+What is meant by Concrete
+
+In programming, the term "concrete" refers to something that is complete, definite, or tangible. 
+It is the opposite of abstract, indicating that an entity has been fully implemented or specified, and can be instantiated or used directly.
+
+Here are a few key points about concrete entities in programming:
+
+Concrete Classes: 
+A concrete class is a class that is fully implemented and can be instantiated to create objects. 
+It provides complete definitions and implementations of all its methods and may or may not inherit from abstract classes or implement interfaces. 
+Concrete classes can be directly used to create objects and invoke their methods.
+
+Concrete Methods: 
+A concrete method is a method that has a complete implementation within a class. 
+It provides the actual code that defines the behavior and functionality of the method. 
+Concrete methods can be invoked directly and executed to perform specific tasks.
+
+Concrete Objects: 
+A concrete object is an instance of a class that has been created using the new keyword or other object creation mechanisms. 
+Concrete objects represent specific instances with their own state and behavior, based on the definition provided by the corresponding class.
+
+Concrete Implementation: 
+In the context of interfaces or abstract classes, a concrete implementation refers to a class that provides the actual implementation of the abstract or interface methods. 
+It completes the missing functionality defined by the abstract entity and makes it fully functional and usable.
+
+In summary, "concrete" in programming refers to entities (classes, methods, or objects) that are fully implemented, defined, or tangible. 
+Concrete entities have complete implementations and can be directly instantiated, invoked, or used in the program. 
+They represent the concrete, specific instances or implementations in contrast to the abstract, incomplete, or generalized concepts.
+
+
+
+
