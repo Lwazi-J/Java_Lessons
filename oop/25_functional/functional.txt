@@ -1,0 +1,43 @@
+Functional Interfaces
+
+In Java, a functional interface is an interface that has only one abstract method. 
+It is a concept introduced in Java 8 as part of the lambda expressions and functional programming support.
+
+The key characteristic of a functional interface is that it can be used as a target for lambda expressions or method references. 
+Since it has only one abstract method, it represents a single unit of behavior or functionality, making it suitable for implementation using lambda expressions.
+
+To mark an interface as a functional interface, you can use the @FunctionalInterface annotation, although it is optional. 
+The annotation serves as a reminder to the compiler and other developers that the interface is intended to be used as a functional interface, and any attempt to add more than one abstract method will result in a compilation error.
+
+Functional interfaces enable the use of lambda expressions, which are concise representations of anonymous functions. 
+They allow you to write more compact and expressive code, especially when working with functional programming constructs like streams and functional interfaces from the Java API, such as Predicate, Consumer, or Function.
+
+Java provides several built-in functional interfaces in the java.util.function package, such as Predicate, Consumer, Function, Supplier, etc. 
+These interfaces are commonly used in functional programming scenarios and provide useful abstractions for common functional operations.
+
+Overall, functional interfaces are a fundamental concept in Java's functional programming paradigm, enabling the use of lambda expressions and promoting more concise and expressive code.
+
+
+
+In the java.util.function package, Java provides a set of built-in functional interfaces that can be used in functional programming scenarios. 
+These interfaces cover a wide range of common functional operations. 
+Here is a list of the most commonly used functional interfaces found in java.util.function:
+
+Predicate<T>: Represents a predicate (boolean-valued function) of one argument.
+Consumer<T>: Represents an operation that takes a single input argument and returns no result.
+Function<T, R>: Represents a function that takes one argument and produces a result.
+Supplier<T>: Represents a supplier of results.
+UnaryOperator<T>: Represents an operation on a single operand that produces a result of the same type as the operand.
+BinaryOperator<T>: Represents an operation upon two operands of the same type, producing a result of the same type as the operands.
+BiPredicate<T, U>: Represents a predicate (boolean-valued function) of two arguments.
+BiConsumer<T, U>: Represents an operation that accepts two input arguments and returns no result.
+BiFunction<T, U, R>: Represents a function that accepts two arguments and produces a result.
+
+
+Java SE 8 included four main kinds of functional interfaces which can be applied in multiple situations as mentioned below:
+
+Consumer
+Predicate
+Function
+Supplier
+
