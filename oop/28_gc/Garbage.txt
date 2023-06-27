@@ -1,0 +1,27 @@
+Here's a high-level overview of how garbage collection works:
+
+Memory Allocation: 
+When objects are created in a programming language, memory is allocated to store their data and associated metadata. 
+In Java, objects are typically allocated on the heap.
+
+Reachability Analysis: 
+The garbage collector periodically scans the heap to determine which objects are still in use or reachable by the program. 
+It starts with a set of root objects, such as global variables or objects referenced from the stack, and follows references to other objects to build a graph of reachable objects.
+
+Marking Phase: 
+During the reachability analysis, the garbage collector marks the reachable objects by setting a flag or bit in their metadata. 
+Objects that are not marked are considered unreachable and eligible for garbage collection.
+
+Garbage Collection: 
+Once the marking phase is complete, the garbage collector identifies the unreachable objects and reclaims their memory. 
+This process involves releasing the memory occupied by the unreachable objects and making it available for future memory allocations.
+
+Memory Compaction (optional): 
+Some garbage collectors perform an additional step called memory compaction. 
+It involves moving the live objects closer together in memory to reduce fragmentation and improve memory allocation efficiency.
+
+Finalization (optional): 
+Before an object is garbage collected, it may go through a finalization process where the object's finalize() method (if defined) is invoked. 
+This allows the object to perform any necessary cleanup actions before being reclaimed. 
+However, the usage of finalize() is discouraged in modern Java programming, and other mechanisms like try-with-resources 
+or the AutoCloseable interface are preferred for resource cleanup.
