@@ -1,0 +1,21 @@
+java.util:
+The java.util package contains utility classes and interfaces that provide various data structures, such as lists, maps, sets, and other general-purpose utilities. 
+It includes classes like ArrayList, HashMap, LinkedList, and interfaces like List, Set, and Map.
+
+java.io:
+The java.io package provides classes and interfaces for performing input and output operations in Java. 
+It includes classes like File, InputStream, OutputStream, Reader, and Writer that are used for reading from and writing to files, streams, and other I/O sources.
+
+java.awt:
+The java.awt package contains classes and interfaces for creating graphical user interfaces (GUI) in Java. 
+It provides components like windows, buttons, text fields, and graphical elements for building desktop applications. 
+Some classes in this package include Frame, Button, TextField, and Graphics.
+
+javax.servlet:
+The javax.servlet package provides classes and interfaces for developing web applications using the Java Servlet API. 
+It includes classes like HttpServletRequest, HttpServletResponse, Servlet, and ServletConfig that are used for handling HTTP requests and responses in web applications.
+
+org.junit:
+The org.junit package is part of the JUnit testing framework. 
+It provides classes and annotations for writing and executing unit tests in Java. 
+It includes classes like TestCase, Assert, and annotations like Test and Before that are used for writing test cases and assertions.

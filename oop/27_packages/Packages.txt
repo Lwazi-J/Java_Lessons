@@ -1,0 +1,23 @@
+Packages serve several purposes
+
+Organization: 
+Packages provide a way to logically organize and group related classes and resources. 
+It helps in maintaining a structured and manageable codebase, especially in large projects.
+
+Encapsulation: 
+Packages allow for encapsulation and access control. 
+By using access modifiers like public, private, protected, and default access, classes within a package can control the visibility of their members to other classes within the same package.
+
+Name-spacing: 
+Packages provide a unique namespace for classes. 
+They help avoid naming conflicts by ensuring that classes with the same name can coexist within different packages.
+
+Modularity and Reusability: 
+Packages enable modularity by grouping classes based on their functionality or purpose. 
+It promotes code reuse as packages can be imported and used in other parts of the project or even in different projects.
+
+Access Control: 
+Packages allow you to control access to classes and members at the package level. 
+You can specify which classes and members are accessible to other packages by using the public, protected, and default access modifiers.
+
+
