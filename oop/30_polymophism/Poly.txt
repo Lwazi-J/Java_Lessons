@@ -1,0 +1,31 @@
+In java the word polymorphism is used to describe the ability of an instance of a class to be Cast to multiple types. 
+When assigning from a subtype to a super-type there is no need for casting. This is called upcasting.
+
+If casting from a super-type to a sub-type there is a need to casting. 
+There is always a danger of a class Cast exception in this scenario this is called downcasting.
+
+
+
+When you assign an instance of a class you wrote YourName.class to a variable of type java.lang.Object.
+
+Which is Object and Which is YourName.class?
+In the given scenario, YourName.class represents the class object of the class you wrote, and Object represents the type java.lang.Object.
+
+
+Is this up-casting or down casting?
+This is an example of upcasting.
+
+
+Provide a reason for your answer above.
+When you assign YourName.class to a variable of type java.lang.Object, you are assigning the class object of your class to a variable of the more general type Object.
+
+
+Is this a demonstration of polymorphism (Yes/No)?
+No, this scenario is not a demonstration of polymorphism.
+
+
+Provide a reason for your answer above.
+Polymorphism refers to the ability of objects of different classes to be treated as objects of a common superclass type. 
+In this case, we are dealing with class objects, which are not instances of a specific class but rather represent the metadata of the class itself. 
+Polymorphism is primarily applicable to instances of classes and their method behavior, not to class objects themselves.
+

@@ -1,0 +1,24 @@
+Can you assign var1 to var2? Does it require casting.
+
+Answer:
+In the given code, you cannot directly assign var1 to var2 without casting.
+Reason:
+Since the Push interface is not implemented by the PushPull class, you cannot assign an instance of PushPull to a variable of type Push.
+
+
+Can you assign pushPull to var1? Does it require casting.
+
+Answer:
+No, you cannot directly assign pushPull to var1 without casting in this scenario.
+Reason:
+The pushPull variable is of type PushPull, which is a class, while var1 is of type Push, which is an interface.
+
+
+Can you assign pushPull to var2? Does it require casting.
+
+Answer:
+Yes, you can assign pushPull to var2 without casting.
+Reason:
+Since both pushPull and var2 are of type Pull, which is an interface, and the PushPull class implements the Pull interface, you can assign an instance of PushPull to var2 directly.
+
+
