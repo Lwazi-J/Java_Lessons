@@ -41,7 +41,7 @@ public class BankAccount {
  * Additionally, the deposit() and withdraw() methods demonstrate encapsulation with validation. 
  * They check if the amount is valid (greater than zero) and perform the respective operations only if the conditions are met. 
  * By encapsulating the balance and providing controlled access through methods, 
- * the class ensures that the account balance is updated correctly and maintains data integrity.
+ * the class ensures that the account balance is updated correctly and maintains data integrity. */
 
 
 
