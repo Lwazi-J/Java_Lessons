@@ -1,0 +1,1109 @@
+1. What will the following program print?
+
+package pack1;
+public class A
+{
+	private int method0ne(int i)
+	{
+		return ++i;
+	}
+	public int methodTwo(int i)
+	{
+		return method0ne(++i);
+	}
+}
+
+package pack2;
+import pack1.A;
+class B extends A
+{
+	int method0ne(int i)
+	{
+		return methodTwo(++i);
+	}
+}
+public class MainClass
+{
+	public static void main(String[] args)
+	{
+		System.out.println(new B().method0ne(101));
+	}
+}
+
+The following program will print:
+104
+
+Explanation:
+The program consists of two classes, A and B, defined in separate packages. 
+Class A has a private method called method0ne(int i), which increments the value of i and returns it. 
+It also has a public method called methodTwo(int i), which calls method0ne(++i).
+Class B extends class A and overrides the method0ne(int i) method. In class B, the overridden method0ne(int i) calls methodTwo(++i).
+In the main method of the MainClass, an instance of class B is created (new B()), and the method0ne(101) is called on that instance.
+
+Here's the execution flow:
+
+The method0ne(101) in class B is called.
+In the overridden method0ne(int i) in class B, methodTwo(++i) is called.
+++i increments the value of i to 102, and then methodTwo(102) is called.
+In methodTwo(int i) of class A, method0ne(++i) is called.
+++i increments the value of i to 103, and then method0ne(103) is called.
+In method0ne(int i) of class B (overridden method), methodTwo(++i) is called.
+++i increments the value of i to 104, and then methodTwo(104) is called.
+In methodTwo(int i) of class A, method0ne(++i) is called.
+++i increments the value of i to 105, and then method0ne(105) is called.
+In method0ne(int i) of class A, ++i increments the value of i to 106, and 106 is returned.
+The return value 106 is returned to methodTwo(int i).
+In methodTwo(int i) of class A, the return value 106 is returned to method0ne(int i).
+The return value 106 is returned to method0ne(int i) in class B.
+The return value 106 is printed by the println statement in the main method.
+Thus, the output will be: 104
+
+
+
+
+ 
+2. What is wrong with the following code?
+class A
+{
+	public void method0fA()
+	{
+		System.out.println("Class A");
+	}
+}
+
+class B extends A
+{
+	@Override
+	void method0fA()
+	{
+		System.out.println("Class B");
+	}
+}
+
+-There is no problem with the code
+-The visibility of methodOfA() has been reduced to default while overriding it in the class B. You can’t reduce the visibility of a method while overriding it.
+-Class B can not extend Class A
+-None of the above
+
+Answer:
+The visibility of methodOfA() has been reduced to default while overriding it in the class B. 
+You can’t reduce the visibility of a method while overriding it.
+
+Explanation"
+In class B, the method method0fA() is attempting to override the method from class A, 
+but it is missing the public access modifier in its declaration. 
+This results in a compilation error.
+To fix the error, the method declaration in class B should match the access modifier of the overridden method in class A. 
+In this case, the method in class B should also have the public access modifier.
+
+
+
+
+
+
+4. A method of super class with default access modifier can be overridden as protected or public but not as private. True or false?
+
+True
+False
+
+Answer:
+True
+
+Explanation:
+A method of a superclass with a default (package-private) access modifier can be overridden by a subclass with either a protected or public access modifier. 
+This is because the protected and public access modifiers have wider accessibility than the default access modifier.
+
+If the superclass method has a default access modifier, the subclass can override it with a protected access modifier, allowing the method to be accessible within the subclass and its subclasses, even if they are in different packages.
+Alternatively, the subclass can override the superclass method with a public access modifier, making it accessible to all classes, including those outside the package.
+However, the subclass cannot override the superclass method with a private access modifier because private methods are not inherited and are not accessible to subclasses. 
+They are specific to the declaring class only.
+
+
+
+
+ 
+6. Can we declare static methods as private?
+
+-Yes
+-No
+-Maybe
+
+Answer:
+Yes
+
+Explanation:
+Yes, we can declare static methods as private in Java.
+
+When a method is declared as private, it means it can only be accessed within the same class. 
+This applies to both instance methods and static methods. 
+By declaring a static method as private, you are restricting its access to only other methods within the same class, regardless of whether they are static or instance methods.
+
+Private static methods are commonly used as helper methods within a class. 
+They provide utility functions that are used internally by other methods of the class but are not intended to be accessed or called from outside the class.
+
+
+
+
+7. Why we can’t instantiate Class-A in the below code outside the package even though it has public constructor?
+
+package packl;
+class A
+{
+	public A()
+	{
+		//public constructor
+	}
+}
+package pack2;
+import packl.*;
+class B
+{
+	A a = new A();	//Compi1e Time Error
+}
+
+-Because class B does not extend class A
+-Because A and B are different packages
+-Because, Class-A itself has been defined with default access modifier. That means Class-A can be instantiated within the package in which it is defined. It can not be instantiated outside the package, even though it has public constructor.
+-None of the above
+
+Answer:
+Because, Class-A itself has been defined with default access modifier. 
+That means Class-A can be instantiated within the package in which it is defined. 
+It can not be instantiated outside the package, even though it has public constructor.
+
+Explanation:
+The reason you cannot instantiate Class-A in pack2 even though it has a public constructor is because the constructor's accessibility is determined by the accessibility of the class itself.
+
+In the given code, Class-A is in pack1 package, and it does not have any explicit access modifier, which means it has the default (package-private) access level. 
+Since Class-B in pack2 is in a different package, it cannot access the default (package-private) members of Class-A, including its constructor.
+
+Even though the constructor of Class-A is declared as public, it is still restricted by the accessibility level of the class. 
+In order to instantiate Class-A in pack2, either the constructor or the class itself should have public access.
+
+To make Class-A accessible in pack2, you can modify the access modifier of Class-A to public or move Class-B to the same package as Class-A (pack1).
+
+
+
+
+
+8. What is the output of the following code?
+
+package packl;
+class A
+{
+	protected static String s = "A";
+}
+class B extends A
+{
+
+}
+class C extends B
+{
+	static void method0fC()
+	{
+		System.out.println(s);
+	}
+}
+
+public class MainC1ass
+{
+	public static void main(String[] args)
+	{
+		C. method0fC();
+	}
+}
+
+-A
+-B
+-C
+-It will not compile
+-Exception at runtime
+
+Answer:
+A
+
+
+The output of the given code will be:
+
+"A"
+
+Explanation:
+The code defines three classes: A, B, and C.
+Class A has a protected static variable s with the value "A".
+Class B extends class A, inheriting the protected static variable s.
+Class C extends class B.
+In class C, there is a static method method0fC(), which attempts to print the value of s.
+In the main() method of the MainClass, C.method0fC() is called.
+When method0fC() is executed, it tries to access the variable s inherited from class A. 
+Since the variable s is protected, it can be accessed within the same package (pack1) and also by subclasses (such as class C), regardless of the package.
+Therefore, the output of the code will be "A", as it prints the value of s from class A.
+
+
+
+
+
+9. How many public classes a .java file can have?
+
+-1
+-2
+-3
+-Any
+
+Answer:
+1
+
+Explanation:
+A .java file can have at most one public class.
+
+In Java, it is a convention that the name of the .java file should match the name of the public class declared within it. 
+This is to ensure that the file is easily identifiable based on its name.
+While a .java file can contain multiple class definitions, only one of them can be declared as public. 
+The public class is the entry point for the Java program and is typically the one that contains the main method.
+Other non-public classes in the .java file can be accessed within the same package but are not accessible from outside the package.
+
+So the correct answer is: 1 public class.
+
+
+
+
+
+10. Which, if any, of the following declarations are legal?
+
+-public MyClass {//...}
+-public protected int myVar;
+-friendly Button myButton;
+-Label myLabel;
+
+Answer:
+Label myLabel;
+
+Explanation:
+Label myLabel;: This declaration is legal as it declares a variable myLabel of type Label without specifying an access modifier. 
+By default, it will have package-private (friendly) access, allowing it to be accessed within the same package.
+
+
+
+
+
+11. True or false?  friendly is a Java keyword that is used to specify a level of access.
+
+-True
+-False
+
+Answer:
+False
+
+Explanation:
+The statement is false. 
+"friendly" is not a Java keyword. 
+In Java, the access modifiers used to specify levels of access are public, protected, private, and the default (package-private) access level. 
+The term "friendly" is sometimes informally used to refer to the default access level, which allows access within the same package. 
+However, it is not a recognized keyword or official access modifier in the Java language.
+
+
+
+
+
+
+12. What is the output produced by the following program?
+class Q31{
+	public static void main (String args[]) {
+		SubClass ref1 = new Subclass(5);
+		SubClass ref2 = new SubClass (10) ;
+		System.out.println (ref1.add(ref2));
+	}//end main( )
+} // end class definition
+
+class AClass{
+	protected int x;
+
+	AClass (int x) { //constructor
+		this.x = x;
+	} // end constructor
+} // end class AClass
+
+class SubClass extends AClass{
+	Subclass (int x) {
+		super (x) ;
+	} // end constructor
+
+int add (AClass ref) {
+	return x + ref.x;
+	} // lend add ( )
+} // end class Subclass
+
+
+-Compiler Error
+-15
+-10
+-Runtime Error
+
+Answer:
+15
+
+Explanation:
+The program defines three classes: Q31, AClass, and SubClass.
+
+The main method is defined in the Q31 class. 
+Inside the main method, two objects of the SubClass are created: ref1 with an x value of 5 and ref2 with an x value of 10.
+The add method in the SubClass takes an argument of type AClass and calculates the sum of the x value of the current object (using this.x) and the x value of the passed AClass object (ref.x).
+In the main method, ref1.add(ref2) is called, which invokes the add method of ref1 (SubClass) with ref2 (SubClass) as the argument.
+Since ref1.x is 5 and ref2.x is 10, the add method returns the sum of 5 and 10, which is 15.
+
+Finally, the System.out.println statement prints the result, which is 15, to the console
+
+
+
+
+
+
+13. Can we declare a static method private ?
+
+-Yes
+-No
+
+Answer:
+Yes
+
+Explanation:
+Yes, we can declare a static method as private in Java.
+
+A private static method can only be accessed within the same class and is not accessible from any other class, even from the subclasses. 
+It is commonly used to define utility methods that are only used internally within the class and not intended to be exposed to other classes.
+
+
+
+
+
+16. Given the following class, which of the following are valid ways of referring to the class from outside of the package com.enthu?
+package com.enthu;
+public class Base{
+	//....
+	// lot of code...
+}
+
+-Base
+-By importing package.com.* and referring to the class as enthu.Base
+-Importing com.* is illegal
+-By importing com.enthu.* and referring to class as Base
+-By referring to the class as com.enthu.Base
+
+Answer:
+-By importing com.enthu.* and referring to class as Base
+-By referring to the class as com.enthu.Base
+
+Explanation:
+By importing com.enthu.* and referring to the class as Base. 
+This means importing all classes from the com.enthu package and directly using the class name Base to refer to the class.
+
+
+
+
+
+
+17. How can you declare a method someMethod() such that an instance of the class is not needed to access it and all the members of the same package have access to it? Select all that apply.
+
+-public static void someMethod()
+-static void someMethod()
+-protected static void someMethod()
+-void someMethod()
+-protected void someMethod(0
+-public abstract static void someMethod()
+
+Answer:
+-public static void someMethod()
+-static void someMethod()
+-protected static void someMethod()
+
+
+Explanation:
+public static void someMethod(): 
+This declaration makes the method accessible to all classes and members, regardless of whether they are in the same package or not. 
+The public access modifier allows access from any other class or package, and static means the method can be accessed without creating an instance of the class.
+
+static void someMethod(): 
+This declaration makes the method accessible to all members within the same package. 
+Since no access modifier is specified, it defaults to package-private access. 
+The static keyword allows accessing the method without creating an instance of the class.
+
+The protected access modifier allows access to the method from within the same package and from subclasses, regardless of whether they are in the same package or not. 
+In this case, since it is not necessary to access the method from subclasses, only the requirement of being accessible to all members of the same package is met.
+
+
+
+
+
+19. Which of the following method definitions will prevent overriding of that method?
+
+-public final void m1()
+-public static void m1()
+-public static final void m1()
+-public abstract void m1()
+-private void m1()
+
+Answer:
+-public final void m1()
+-public static void m1()
+-public static final void m1()
+-private void m1()
+
+
+
+
+
+
+20. Consider the following class...
+class TestC1ass{
+	int x;
+	public static void main(String[] args){
+		// lot of code.
+	}
+}
+
+-By declaring x as static, main can access this.x
+-By declaring x as public, main can access this.x
+-By declaring x as protected, main can access this.x
+-main cannot access this.x as it is defined now
+-BY declaring x as private, main can access this.x
+
+Answer
+-main cannot access this.x as it is defined now
+
+Explanation:
+In the given code, the variable x is not declared as static, public, protected, or private. Therefore, it has the default access modifier, which means it is accessible only within the same package. 
+Since the main method is a static method, it does not have access to instance variables (non-static variables) like x without creating an instance of the class. 
+As a result, the main method cannot access this.x in its current form.
+
+
+
+
+
+21. Given the following source code, which of the lines that are commented out may be reinserted without introducing errors?
+
+abstract class Bang{
+	//abstract void f(); //(0)
+	  final void g(){}
+	// final void h(){} //(1)
+	   protected static int i;
+	   private int j;
+}
+
+final class BigBang extends Bang{
+	//BigBang(int n) {m = n;} // (2)
+	  public static void main(String args[]){
+		Bang mc = new Bigdang();
+	}
+	  void h(){}
+	//void k() { i++; }  // (3)
+	//void l() { j++; }  // (4)
+	  int m;
+}
+
+-final void h() {} //(1)
+-BigBang (int n) { m=n; } //(2)
+-void k() { i++; } //(3)
+-void l() { j++; } //(4)
+-abstract void f() ; //(0)
+
+Answer:
+void k() { i++; } //(3)
+
+Explanation:
+This line can be reinserted. 
+The k() method is a package-private method in the BigBang class, and it can access the static variable i declared in the Bang class since it is also in the same package.
+
+
+
+
+
+
+22. An instance member...
+
+-can be a variable, a constant or a method
+-is a variable or a constant
+-belongs to a class
+-belongs to the instance of a class
+-is same as a local variable
+
+Answer:
+-can be a variable, a constant or a method
+-belongs to the instance of a class
+
+Explanation:
+In object-oriented programming, an instance member refers to a member (variable, constant, or method)
+that is associated with an instance or object of a class. 
+Each instance of a class has its own set of instance members, and they hold specific values or behaviors for that particular instance.
+
+
+
+
+
+
+23. What will be the result of attempting to compile this class?
+
+import java.util.*;
+package test;
+public class TestClass{
+	public OtherClass oc = new OtherC1ass();
+}
+class OtherClass{
+	int value;
+}
+
+-The class will fail to compile, since the class OtherClass is used before it is defined
+-There is no problem with the code
+-The class will fail to compile, since the class Otherclass must be defied in a file called OtherClass.java
+-The code will fail to compile
+-None of the above
+
+Answer:
+The code will fail to compile
+
+Explanation:
+The class will fail to compile since the class OtherClass is used before it is defined.
+
+In the given code, the class TestClass tries to instantiate an object of type OtherClass, 
+but the definition of OtherClass appears after the usage in TestClass. 
+Java requires that a class is defined or imported before it is used.
+
+To fix the compilation error, you should either move the definition of OtherClass before 
+TestClass in the same file or place the OtherClass definition in a separate file called OtherClass.java.
+
+
+
+
+
+
+24. Given the following class, which statements can be inserted at line 1 without causing the code to fail compilation?
+public class TestClass{
+	int a;
+	int b = 0;
+	static int c;
+	public void m(){
+		int d;
+		int e = 0;
+		// Line 1
+	}
+}
+
+-a++
+-b++
+-c++
+-d++
+-e++
+
+Answer:
+-a++
+-b++
+-c++
+-e++
+
+Explanation:
+a++: This statement increments the value of the instance variable a by 1.
+b++: This statement increments the value of the instance variable b by 1.
+c++: This statement increments the value of the static variable c by 1.
+These statements are valid because they increment variables within the method m(), and they do not violate any Java syntax or rules.
+
+
+
+
+
+25. Given the following code, which statements can be placed at the indicated position without causing compile and run time errors?
+
+public class Test{
+	int il;
+	static int i2;
+	public void methodl(){
+		int i;
+		// insert statements here
+	}
+}
+
+-i = this.i1;
+-i = this.i2;
+-this = new Test();
+-this.i = 4;
+-this.i1 = i2;
+
+Answer:
+-i = this.i1;
+-i = this.i2;
+-this.i1 = i2;
+
+Explanation:
+this.i1 = i2;
+This statement will compile without errors. 
+Since i2 is a static variable, it can be accessed using the class name Test.i2 or this.i2 within instance methods of the Test class. 
+The statement assigns the value of i2 to the instance variable i1 of the current object.
+
+i = this.i2;
+This statement will compile without errors.
+The variable i2 is a static variable in the Test class, and it can be accessed using the this keyword or the class name Test.i2 within instance methods of the class.
+
+
+
+
+
+26. Which of the following statements are correct regarding the field value?
+
+public class MyClass {
+	protected int value = 10;
+}
+
+-It cannot be accessed from any other class
+-It can be read but cannot be modified from any other class
+-It can be read and modified from any class within the same package or from any subclass of MyClass
+-It an be modified but only from a subclass of Myclass
+
+Answer:
+It can be read and modified from any class within the same package or from any subclass of MyClass
+
+Explanation:
+The field value is declared with the protected access modifier in the MyClass class. 
+This access modifier allows the field to be accessed (both read and modified) from any class within the same package and from any subclass of MyClass, regardless of whether they are in the same package or not.
+
+
+
+
+
+
+27.  What is the result of compiling and running the following code?
+
+public class TestClass{
+	static int si = 10;
+	public static void main (String args[]){
+		new TestC1ass();
+	}
+	public TestClass(){
+		System.out.println(this);
+	}
+	public String toString(){
+		return "TestC1ass.si = "+this.si;
+	}
+}
+
+-The class will not compile because you can not override toString() method
+-The class will not compile as si being static, this.si is not a valid statement
+-It will print TestClass@nnnnnn, where nnnnn is the hash code of the TestClass object referred to by 'this'
+-It will print TestClass.si = 10
+-None of the above
+
+Answer:
+It will print TestClass.si = 10
+
+Explanation:
+When the main method is executed, it creates a new instance of the TestClass class using the constructor new TestClass(). 
+This constructor prints the value returned by the toString() method when called on the current object (this).
+In the toString() method, the string "TestClass.si = " is concatenated with the value of this.si, which refers to the static variable si of the TestClass class. 
+Since si is a static variable, it can be accessed using this.si or TestClass.si.
+The output will be "TestClass.si = 10", indicating that the value of the static variable si is 10.
+
+
+
+
+28.  Which of the following statements are true?
+-private keyword can never be applied to any type of class inner or outer.
+-synchronized keyword can never be applied to a class
+-synchronized keyword may be applied to a non-primitive variable
+-final keyword can never be applied to a class
+-A final variable can be shadowed in a subclass
+
+Answer:
+-Synchronized keyword may be applied to a non-primitive variable.
+-A final variable can be shadowed in a subclass.
+
+Explanation:
+Synchronized keyword may be applied to a non-primitive variable. 
+The synchronized keyword in Java can be used to acquire a lock on an object to ensure exclusive access to the synchronized block or method. 
+It can be applied to non-primitive variables, methods, and blocks.
+
+A final variable can be shadowed in a subclass. 
+When a variable is declared as final in a superclass, it means that its value cannot be changed. 
+However, a subclass can declare a variable with the same name, thus shadowing the final variable from the superclass. 
+In this case, the subclass's variable will take precedence, and the final variable from the superclass will be effectively hidden within the subclass.
+
+
+
+
+30. What is the correct parameter specification for the standard main method?
+
+-void
+-String [] args
+-Strings args []
+-String args
+-String args []
+
+Answer:
+String [ ] args
+String args [ ]
+
+Explanation:
+The main method in Java is the entry point for the program execution. 
+It is declared with the public access modifier and the static keyword, which means it belongs to the class rather than an instance of the class. 
+The main method takes a single parameter, which is an array of strings.
+
+The parameter is commonly named args, but you can use any valid identifier. 
+This array allows you to pass command-line arguments to the program when it is executed. 
+Each element of the array represents a command-line argument passed to the program.
+
+In Java, the main method can have the parameter specification String[] args or String args[]. 
+Both forms are valid and acceptable. 
+They indicate that the main method accepts an array of strings as command-line arguments.
+
+
+
+
+
+31. What will the result of attempting to compile and run class B?
+
+class A{
+	final int fi = 10;
+}
+public class B extends A{
+	int fi = 15;
+	public static void main(String[] args){
+		B b = new B();
+		b. fi = 20;
+		System.out.println(b.fi);
+		System.out.println( ( (A) b ).fi );
+	}
+}
+
+-It will not compile
+-It will print 10 and then 10
+-It will print 20 and then 20
+-It will print 10 and then 20
+-It will print 20 and then 10
+
+Answer:
+It will print 20 and then 10
+
+Explanation:
+In the given code, class B extends class A, which means it inherits the instance variable fi from class A. 
+Class B also declares its own instance variable fi.
+
+When the main method is executed, it creates an object of class B (B b = new B()). 
+Then, the value of the instance variable fi in object b is changed to 20 (b.fi = 20).
+When System.out.println(b.fi) is called, it prints the value of the instance variable fi in object b, which is 20.
+
+However, when System.out.println(((A) b).fi) is called, it casts b to type A and then accesses the instance variable fi from class A. 
+Since the instance variable fi in class A is marked as final, its value cannot be modified. 
+Therefore, the value of fi accessed through the cast will be the original value defined in class A, which is 10
+
+
+
+
+
+
+32.Given the following class, which of the given blocks can be inserted at line 1 without errors?
+public class InitClass{
+	private static int loop = 15;
+	static final int INTERVAL = 10;
+	boolean flag ;
+	// line 1
+}
+
+-static { System.out.println ("Static"); }
+-static { loop = 1; }
+-static { loop += INTERVAL; }
+-static { INTERVAL = 10;}
+-{ flag = true; loop = 0; }
+
+Answer:
+-static { System.out.println ("Static"); }
+-static { loop = 1; }
+-static { loop += INTERVAL; }
+-{ flag = true; loop = 0; }
+
+Explanation:
+The first three blocks are static initializer blocks, which are executed when the class is loaded. 
+They can modify the static variables within the class.
+
+The fourth block is an instance initializer block, which is executed when an instance of the class is created. 
+It can modify instance variables. 
+Since flag is an instance variable, it can be initialized in this block.
+
+However, the block -{ INTERVAL = 10; } cannot be inserted at line 1 without errors because INTERVAL is declared as final, which means its value cannot be changed after initialization. 
+Therefore, attempting to assign a new value to INTERVAL will result in a compilation error.
+
+
+
+
+
+
+33. Which of the following is the correct way to encapsulate the variable int id
+public class Test{
+	public int id;
+}
+
+-Make 'id' private
+-Make 'id' private and provide a public method getID() which will return its value
+-Make 'id' static and provide a public static method getID() which will return its value
+-Make id protected
+
+Answer:
+-Make 'id' private and provide a public method getID() which will return its value
+
+Explanation:
+By making id private, it cannot be accessed directly from outside the class. 
+The getID() method allows controlled access to the id variable by providing its value to the caller.
+
+
+
+
+
+34. Which of these statements about interfaces are true?
+
+-Interfaces are abstract by default
+-An interface can have static methods
+-All methods in an interface are abstract although you need not declare them to be so
+-Fields of an interface may be declared as transient or volatile but not synchronized
+-interfaces cannot be final
+
+Answer
+-Interfaces are abstract by default
+-An interface can have static methods
+-interfaces cannot be final
+
+Explanation:
+Interfaces are abstract by default: This statement is true. 
+In Java, interfaces are implicitly abstract, meaning they cannot be instantiated on their own. 
+They provide a contract for classes to implement.
+
+An interface can have static methods: This statement is true. 
+Starting from Java 8, interfaces can have static methods. 
+These methods can be called on the interface itself, without requiring an instance of a class that implements the interface.
+
+Interfaces cannot be final: This statement is true. 
+Interfaces cannot be declared as final because they are meant to be implemented by classes. 
+Making an interface final would prevent classes from implementing it, which goes against the purpose of interfaces.
+
+
+
+
+
+35. Which statements can be inserted at line 1 in the following code to make the program write x on the standard output when run?
+public class AccessTest{
+	String a = "x";
+	static char b = 'x'
+	String c = "x";
+	class Inner {
+		String a = "y";
+		String get(){
+			String c = "tempu ;
+			// Line 1
+			return c;
+		}
+	}
+
+	AccessTest() {
+		System.out.println( new Inner() .get() );
+	}
+public static void main(String args[]) { new AccessTest(); }
+}
+
+-c = c;
+-c = this.a;
+-c = ""+AccessTest.b;
+-c = AccessTest.this.a;
+-c = ""+b;
+
+Answer
+-c = ""+AccessTest.b;
+-c = AccessTest.this.a;
+-c = ""+b;
+
+Explanation:
+These statements assign the value of the variable a to the variable c, which is then returned by the get() method.
+
+When executing the code with the statement c = this.a; at line 1, it will assign the value of a from the inner class instance ("y") to the variable c. The program will then print "y" on the standard output
+
+
+
+
+
+37. Given:
+
+class Triangle{
+	public int base;
+	public int height;
+	private final double ANGLE;
+
+	public void setAngle(double a){ ANGLE = a; }
+	public static void main(String[] args) {
+		Triangle t = new Triangle();
+		t. setAngle(90);
+	}
+}
+
+-the value of ANGLE will not be set to 90 by the setAngle method
+-An exception will be thrown at run time
+-The code will work as expected setting the value of ANGLE to 90
+-The code will not compile
+
+Answer:
+-The code will not compile
+
+Explanation:
+The reason is that the ANGLE variable is declared as final, which means its value cannot be changed once assigned. 
+In the code provided, the setAngle method attempts to assign a new value to the ANGLE variable. 
+However, since it is declared as final, it will result in a compilation error.
+
+
+
+
+
+38. Compared to public, protected and private accessibility, default is...
+
+-Less restrictive than public
+-More restrictive than public, but less restrictive than protected
+-More restrictive than protected, but less restrictive than private
+-More restrictive than private
+-less restrictive than protected from within a package, and more restrictive than protected from outside a package
+
+Answer:
+-More restrictive than protected, but less restrictive than private
+
+Explanation:
+These statements correctly describe the default accessibility level in Java.
+
+By default, when no access modifier is specified for a class, method, or variable, it is considered to have default (also known as package-private) accessibility. 
+This means that the class, method, or variable is accessible within the same package but not outside of it.
+
+Here's a comparison of the different access levels:
+
+Default (package-private): More restrictive than public, as it restricts access to the same package. 
+Less restrictive than protected, as it does not allow access from subclasses outside the package.
+
+Public: Least restrictive, as it allows access from anywhere, including outside the package and from subclasses.
+
+Protected: More restrictive than default within a package, as it only allows access from subclasses within the package or subclasses outside the package. 
+However, it is more permissive than default outside a package, as it allows access from subclasses outside the package.
+
+Private: Most restrictive, as it limits access to within the same class only. 
+It does not allow access from subclasses or other classes.
+
+Therefore, the default accessibility is more restrictive than public, less restrictive than protected, more restrictive than private, and it has specific behavior regarding its accessibility within and outside the package.
+
+
+
+
+
+
+39. Consider the following program written by a novice programmer.
+
+class Elliptical{
+	public int radiusA, radiusB;
+	public int sum = 100;
+
+	public void setRadius(int r) {
+		if(r>99) throw new IllegalArgumentException();
+		radiusA = r;
+		radiusB = sum — radiusA;
+	}
+}
+
+After some time, the requirements changed and the programmer now wants
+to make sure that radiusB [s always (200 - radiusA) instead of (100 - radiusA)
+without breaking existing code that other people have written. Which of the
+followin will accomplish his goal
+
+-Make sum = 200;
+-Make sum = 200 and make it private.
+-Make sum = 200 and make all fields (radiusA, radiusB, and sum) private
+-Write another method setRadius2 (int r) and set radiusB accordingly in this method
+-His goal cannot be accomplished
+-This class will not compile
+
+Answer:
+-His goal cannot be accomplished
+
+Explanation:
+The goal can indeed be accomplished by introducing a new method and updating the calculation of radiusB in that method.
+
+
+
+
+
+
+40. Which of the following statements are true?
+
+-Private methods cannot be overridden in subclasses
+-A subclass can override any method in a non-final superclass
+-An overriding method can declare that it throws a wider spectrum of checked exceptions than the method it is overriding
+-The parameter list of an overriding method must be a subset of the parameter list of the method it is overriding
+-The overriding method may opt not to declare any throws clause even if the original method has a throws clause
+
+Answer:
+-Private methods cannot be overridden in subclasses
+-The overriding method may opt not to declare any throws clause even if the original method has a throws clause
+
+Explanation:
+Private methods cannot be overridden in subclasses:
+This statement is true. Private methods are not accessible to subclasses, so they cannot be overridden.
+
+The overriding method may opt not to declare any throws clause even if the original method has a throws clause:
+This statement is true. 
+The overriding method is not required to declare any checked exceptions in its throws clause, even if the original method it is overriding declares checked exceptions. 
+The overriding method can choose to catch and handle the exceptions internally or simply not propagate them
+
+
+
+
+
+41. Assume the following declarations
+class A{}
+class B extends A {}
+class C extends B{}
+
+class X {
+	B getB(){ return new B(); }
+}
+
+class Y extends X{
+	// method declaration here
+}
+
+Which of the following methods can be inserted in class Y?
+
+-public C getB() { return new B(); }
+-protected B getB() { return new C(); }
+-C getB() { return new C(); }
+-A getB() { return new A(); }
+
+Answer:
+-protected B getB() { return new C(); }
+-C getB() { return new C(); }
+
+Explanation:
+C getB() { return new C(); }: This method can be inserted in class Y because it correctly overrides the getB() method from class X. 
+The return type C is a subclass of the original return type B, satisfying the overriding rule.
+
+protected B getB() { return new C(); }: This method can be inserted in class Y because it correctly overrides the getB() method from class X. 
+The return type B is the same as the original return type, satisfying the overriding rule. 
+Additionally, the visibility of the overriding method can be the same or less restrictive, so changing the visibility from public to protected is allowed.
+
+
+
+
+
+42. Which of these are NOT legal declarations within a concerete class?
+
+-static int sa;
+-final Object [] objAr = { null };
+-abstract int t;
+-abstract void format();
+-final static private double PI = 3.14159265358979323846
+
+Answer
+abstract int t;
+abstract void format();
+
+Explanation:
+abstract int t;: Abstract methods or members are not allowed in a concrete class. 
+Abstract members are meant to be implemented in subclasses, so they are not allowed to be declared in a concrete class.
+
+abstract void format();: Similar to the previous option, abstract methods are not allowed in a concrete class. 
+Abstract methods lack an implementation and are meant to be overridden in subclasses.
+
+
