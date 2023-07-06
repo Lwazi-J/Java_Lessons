@@ -1,0 +1,457 @@
+3. At which line will the code fail to compile?
+
+private class A
+{
+	private class B
+	{
+		//lnner class
+	}
+}
+
+-Line 1
+-Line 3
+-Line 5
+-The code compiles
+
+Answer:
+-Line 1
+
+Explanation:
+The reason is that the private access modifier is not allowed for top-level classes. 
+Only inner classes (classes defined within other classes) can have private access modifiers. 
+Top-level classes can have either public or default (package-private) access modifiers.
+
+Therefore, the code will fail to compile at Line 1 due to the usage of the private access modifier for a top-level class.
+
+
+
+
+
+
+5. What is wrong with the code below?
+class A
+{
+	private class B
+	{
+		//inner class
+	}
+}
+
+public class MainClass extends A
+{
+	public static void main(String[] args)
+	{
+		Bb = new B();
+	}
+}
+
+-private inner Class B can not be instantiated outside the Class A.
+-class access modifier is default
+-Class A cannot be extended
+-Nothing is wrong, code compiles successfully
+
+Answer
+-private inner Class B can not be instantiated outside the Class A.
+
+Explanation:
+The inner class B in class A is declared with the private access modifier. 
+This means that B is only accessible within the scope of class A. 
+Therefore, in the MainClass, which is a separate class and not a subclass of A, there is no access to the private inner class B.
+
+Attempting to create an instance of B using new B() in the MainClass will result in a compilation error because the private inner class B cannot be accessed or instantiated from outside the class A.
+
+
+
+
+
+
+10. Can a protected field of a class be inherited to subclass outside the package?
+
+-No, protected members are only inherited to subclasses in the same package
+-No, protected members can not be inherited
+-Yes, protected members are inherited any where
+-Yes, protected members of a class are inherited to sub classes outside the package.
+
+Answer:
+Yes, protected members of a class are inherited to sub classes outside the package.
+
+Explanation:
+Protected members (fields and methods) of a class can be inherited to subclasses, 
+whether they are within the same package or outside the package. 
+The protected access modifier allows access to the member within the same package as well as in subclasses, 
+regardless of whether they are in the same package or in a different package.
+
+
+
+
+
+
+11. At what line is there a compile time error?
+
+package packl;
+public class A
+{
+	protected A()
+	{
+		//protected constructor
+	}
+}
+
+package pack2;
+import pack1.A;
+class B
+{
+	Aa = new A();
+}
+
+-Line 1
+-Line 5
+-Line 13
+-Line 17
+
+Answer:
+-Line 17
+
+Explanation:
+The error occurs because the class B in package pack2 is trying to create an instance of class A from package pack1 using new A(). 
+However, the constructor of class A is declared as protected, which means it can only be accessed within the same package or by subclasses.
+Since class B is in a different package (pack2), it does not have access to the protected constructor of class A, resulting in a compilation error.
+
+To resolve this error, you can either make the constructor of class A public or create a subclass of A in package pack2 that can access the protected constructor.
+
+
+
+
+
+
+
+
+12. At which line will the code below fail compilation?
+
+package packl;
+
+public class A
+{
+	protected A(int i)
+	{
+		//protected constructor
+	}
+}
+
+package pack2;
+import pack1.A;
+class B extends A
+{
+	public B()
+	{
+		super(10);	//calling super class's protected constructor
+	}
+}
+
+-Line 1
+-Line 5
+-Line 13
+-Code will compile successfully
+
+Answer:
+-Code will compile successfully
+
+Explanation:
+The code demonstrates the correct usage of a protected constructor. 
+Class B is a subclass of A and resides in a different package (pack2). 
+In the constructor of class B, super(10) is used to call the protected constructor of class A with the integer argument 10. 
+Since class B is a subclass of A, it has access to the protected constructor and can invoke it successfully
+
+
+
+
+15. What is the output of the code below?
+
+class A{
+A(){print();}
+void print() {System.out.println(" A ");}
+}
+
+class B extends A{
+B(){print();}
+void print() {System.out.println(" B ");}
+}
+
+public class C extends B{
+	int i = Math.round(3.5f);
+	public static void main(String[] args) {
+		C a = new A();
+		a.print();
+	}
+	void print() {System.out.println(i);}
+}
+
+
+-A A
+-A B
+-0 4
+-4 4
+-Error
+
+Answer:
+-Error
+
+Explanation:
+In the line C a = new A();, you are trying to assign an object of type A to a variable of type C. 
+This is not allowed because A is not a subtype of C. 
+The correct assignment would be A a = new A();.
+
+In class C, you are trying to override the print() method, but the method in class A is not marked as public or protected, so it has package-private access. 
+Therefore, it is not visible to class C, which is in a different package. 
+You need to change the access modifier of the print() method in class A to public or protected for it to be accessible and overridden in class C.
+
+Taking these points into consideration, the code will fail to compile, resulting in an error.
+
+
+
+
+
+23. What will be the output of the following program? Assume that all the below classes are in the same package.
+
+public class MERIT
+{
+	public static void main(String[] args)
+	{
+		new M().m1();
+		new E().m1();
+		new R().m1();
+		new I().m1();
+		new T().m1();
+	}
+}
+
+class M
+{
+	private void m1()
+	{
+		System.out.print("M");
+	}
+}
+
+class E
+{
+	protected void m1()
+	{
+		System.out.print("E");
+	}
+}
+
+class R
+{
+	public void m1()
+	{
+		System.out.print("R");
+		new E().m1();
+	}
+}
+
+class I
+{
+	void m1()
+	{
+		System.out.print("I");
+	}
+}
+
+class T
+{
+	void m2()
+	{
+		System.out.print("T");
+	}
+}
+
+-T
+-MRT
+-MEREIT
+-MERIT
+-Compilation error
+
+Answer
+-Compilation error
+
+Explanation:
+The code will fail to compile due to the following reason:
+
+In the line new T().m1();, you are trying to call the method m1() on an instance of class T. 
+However, class T does not have a method named m1(). 
+Instead, it has a method named m2(). 
+Therefore, this line will result in a compilation error.
+Taking this into consideration, the code will fail to compile, resulting in a compilation error.
+
+
+
+
+
+
+25. What will be the output of the following program?
+
+25. What will be the output of the following program?
+
+class OutPut
+{
+	public static void main(String[] args)
+	{
+		new M().product(3);
+		new O().product(3);
+		new P().product(3);
+	}
+}
+class M
+{
+	int product(int i)
+	{
+		int result = i * i;
+		return result;
+	}
+}
+
+interface N
+{
+	int product(int i);
+}
+
+class O extends M implements N
+{
+	int product(int i)
+	{
+		int result = super.product(i) * i;
+		System.out.println("In O class = " + super.product(i) * i);
+		return result;
+	}
+}
+
+class P extends M
+{
+	public int product(int i)
+	{
+		int result = super.product(i) * i;
+		System.out.println("In P class = " + result);
+		return result;
+	}
+}
+
+-In O class = 27 In P class = 30
+-In O class = 27 In P class = 12
+-Compilation Error
+-Run-time Error
+
+Answer:
+Compilation Error
+
+Explanation:
+In class O, the method product(int i) is attempting to override the method from interface N. 
+However, the interface method is not implemented correctly. 
+The return type of the method in the interface is int, while the return type of the method in class O is missing. 
+This mismatch in the return type will result in a compilation error.
+
+Similarly, in class P, the method product(int i) is attempting to override the method from class M. 
+However, the return type of the method in class P is missing, which also causes a compilation error.
+
+
+
+
+
+
+26. What will be the output of below program?
+class A {
+	public int a;
+	protected int b;
+
+	void getdata(int c, int d) {
+		a = c;
+		b = d;
+		System.out.println(a + " " + b);
+	}
+}
+
+class B extends A {
+	public int mul;
+
+	void multiplication() {
+		mul = a * b;
+	}
+}
+
+public class Inheritance {
+	public static void main(String args[]) {
+		B subobj = new B();
+		subobj.getdata (20, 30);
+		subobj.multiplication();
+	}
+}
+
+-20 30
+-60
+-Some other output
+-Compilation Error or Runtime Error
+
+Answer:
+-20 30
+
+Explanation:
+In the main method, an instance of class B named subobj is created.
+
+The getdata() method is called on subobj with arguments 20 and 30. 
+This method is inherited from class A, and it assigns the values of a and b as 20 and 30, respectively. 
+Then, it prints the values of a and b, resulting in "20 30" being output to the console.
+
+The multiplication() method is called on subobj. 
+This method is defined in class B and calculates the product of a and b, storing the result in the variable mul.
+Since the multiplication result is not printed or output to the console, the output will only be "20 30".
+
+
+
+
+
+
+28. What will be the output of the following program?
+class Foodltems
+{
+	public static void nain(String s[])
+	{
+		Noodles eat = new Noodles();
+		eat.print();
+	}
+}
+
+class Maggi
+{
+	private int spoon = 3;
+	protected int sticks = 4;
+}
+
+class Noodles extends Maggi
+{
+	private int powder = 1;
+	protected int fire = 2;
+
+	void print()
+	{
+		System.out.println(powder + " " + fire + " " + sticks + " "+ spoon);
+	}
+}
+
+-1 2 4 3
+-1 2 4
+-Compilation Error
+-Runtime Error
+
+Answer:
+Compilation Error
+
+Explanation:
+In the print() method of the Noodles class, there is an attempt to access the private variable spoon from the Maggi class. 
+Since spoon is declared as private in the Maggi class, it is not accessible in the Noodles class. 
+This will result in a compilation error.
+
+To fix the error, you can either change the access modifier of spoon in the Maggi class to protected or public, or create a getter method in the Maggi class to access the private variable spoon.
+
+
+
+
